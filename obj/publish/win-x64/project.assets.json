@@ -1,0 +1,142 @@
+{
+  "version": 4,
+  "targets": {
+    "net8.0-windows": {},
+    "net8.0-windows/win-x64": {}
+  },
+  "libraries": {},
+  "projectFileDependencyGroups": {
+    "net8.0-windows": [
+      "ClosedXML >= 0.105.1",
+      "DocumentFormat.OpenXml >= 3.5.1",
+      "Microsoft.Msagl >= 1.1.6",
+      "Microsoft.NET.ILLink.Tasks >= 8.0.29",
+      "Msagl.WpfGraphControl >= 1.2.1"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\rnfkd\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\rnfkd\\Desktop\\CSG\\project\\ESDP_ver.G\\ESDP.csproj",
+      "projectName": "ESDP",
+      "projectPath": "C:\\Users\\rnfkd\\Desktop\\CSG\\project\\ESDP_ver.G\\ESDP.csproj",
+      "packagesPath": "C:\\Users\\rnfkd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rnfkd\\Desktop\\CSG\\project\\ESDP_ver.G\\obj\\publish\\win-x64\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\rnfkd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows": {
+          "framework": "net8.0-windows7.0",
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.300"
+    },
+    "frameworks": {
+      "net8.0-windows": {
+        "framework": "net8.0-windows7.0",
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "ClosedXML": {
+            "target": "Package",
+            "version": "[0.105.1, )"
+          },
+          "DocumentFormat.OpenXml": {
+            "target": "Package",
+            "version": "[3.5.1, )"
+          },
+          "Microsoft.Msagl": {
+            "target": "Package",
+            "version": "[1.1.6, )"
+          },
+          "Microsoft.NET.ILLink.Tasks": {
+            "suppressParent": "All",
+            "target": "Package",
+            "version": "[8.0.29, )",
+            "autoReferenced": true
+          },
+          "Msagl.WpfGraphControl": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "downloadDependencies": [
+          {
+            "name": "Microsoft.AspNetCore.App.Runtime.win-x64",
+            "version": "[8.0.29, 8.0.29]"
+          },
+          {
+            "name": "Microsoft.NETCore.App.Runtime.win-x64",
+            "version": "[8.0.29, 8.0.29]"
+          },
+          {
+            "name": "Microsoft.WindowsDesktop.App.Runtime.win-x64",
+            "version": "[8.0.29, 8.0.29]"
+          }
+        ],
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x64": {
+        "#import": []
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1301",
+      "level": "Error",
+      "message": "https://api.nuget.org/v3/index.json 원본에 대한 서비스 인덱스를 로드할 수 없습니다.\r\n  이 요청을 보내는 동안 오류가 발생했습니다.\r\n  원격 이름을 확인할 수 없습니다.: 'api.nuget.org'"
+    },
+    {
+      "code": "NU1900",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "패키지 취약성 데이터를 가져오는 동안 오류가 발생했습니다. https://api.nuget.org/v3/index.json 원본에 대한 서비스 인덱스를 로드할 수 없습니다."
+    }
+  ]
+}

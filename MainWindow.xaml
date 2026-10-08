@@ -1,0 +1,726 @@
+<Window x:Class="ESDP.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ESDP - 구성도 캔버스" Height="700" Width="1100"
+        WindowState="Maximized"
+        PreviewKeyDown="Window_PreviewKeyDown"
+        Closing="Window_Closing">
+
+    <Window.Resources>
+        <!-- 장치 배치 기준인 20px 단위의 아주 옅은 정사각형 격자 -->
+        <DrawingBrush x:Key="DiagramGridBrush"
+                      TileMode="Tile"
+                      Viewport="0,0,20,20"
+                      ViewportUnits="Absolute">
+            <DrawingBrush.Drawing>
+                <DrawingGroup>
+                    <GeometryDrawing Brush="White">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry Rect="0,0,20,20"/>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource AppGridLineBrush}" Thickness="0.65"/>
+                        </GeometryDrawing.Pen>
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup>
+                                <LineGeometry StartPoint="0,0" EndPoint="20,0"/>
+                                <LineGeometry StartPoint="0,0" EndPoint="0,20"/>
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingBrush.Drawing>
+        </DrawingBrush>
+        <Style x:Key="SidebarGroupContainerStyle" TargetType="{x:Type GroupItem}">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type GroupItem}">
+                                <Expander IsExpanded="True" Margin="1,3,1,2">
+                                    <Expander.Header>
+                                        <Border Background="{DynamicResource AppGroupHeaderBrush}" CornerRadius="4"
+                                                Padding="6,3" Margin="1" Tag="{Binding Name}"
+                                                MouseRightButtonUp="DeviceGroupHeader_RightClick">
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                </Grid.ColumnDefinitions>
+                                                <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                                           Foreground="{DynamicResource AppGroupHeaderTextBrush}" VerticalAlignment="Center"/>
+                                                <Button Grid.Column="1" Content="＋" Style="{StaticResource CompactIconButtonStyle}" Width="24" Height="22"
+                                                        Margin="8,0,0,0" Padding="0"
+                                                        Tag="{Binding Name}"
+                                                        ToolTip="이 종류의 장치 추가"
+                                                        Click="DeviceGroupAddButton_Click"/>
+                                                <Button Grid.Column="2" Content="⋯" Style="{StaticResource CompactIconButtonStyle}" Width="24" Height="22"
+                                                        Margin="3,0,0,0" Padding="0"
+                                                        Tag="{Binding Name}"
+                                                        ToolTip="장치 그룹 이름 변경 또는 삭제"
+                                                        Click="DeviceGroupManageButton_Click"/>
+                                            </Grid>
+                                        </Border>
+                                    </Expander.Header>
+                                    <ItemsPresenter Margin="10,1,0,2"/>
+                                </Expander>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+        </Style>
+        <Style x:Key="CableSidebarGroupContainerStyle" TargetType="{x:Type GroupItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                        <Expander IsExpanded="True" Margin="1,3,1,2">
+                            <Expander.Header>
+                                <Border Background="{DynamicResource AppGroupHeaderBrush}" CornerRadius="4"
+                                        Padding="6,3" Margin="1">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Name}" FontWeight="SemiBold"
+                                                   Foreground="{DynamicResource AppGroupHeaderTextBrush}" VerticalAlignment="Center"/>
+                                        <Button Grid.Column="1" Content="＋" Style="{StaticResource CompactIconButtonStyle}" Width="24" Height="22"
+                                                Margin="8,0,0,0" Padding="0"
+                                                Tag="{Binding Name}"
+                                                ToolTip="이 종류의 케이블 추가"
+                                                Click="CableGroupAddButton_Click"/>
+                                    </Grid>
+                                </Border>
+                            </Expander.Header>
+                            <ItemsPresenter Margin="10,1,0,2"/>
+                        </Expander>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <DockPanel>
+        <Menu DockPanel.Dock="Top">
+            <MenuItem Header="파일(_F)">
+                <MenuItem Header="새 프로젝트" Click="Menu_NewProject"/>
+                <MenuItem Header="열기..." Click="Menu_OpenProject"/>
+                <MenuItem Header="저장 (Ctrl+S)" Click="Menu_SaveProject"/>
+                <MenuItem Header="다른 이름으로 저장..." Click="Menu_SaveProjectAs"/>
+                <Separator/>
+                <MenuItem Header="장치·케이블 Excel 데이터">
+                    <MenuItem Header="장치 불러오기..." Click="Menu_ImportDevicesExcel"/>
+                    <MenuItem Header="케이블 불러오기..." Click="Menu_ImportCablesExcel"/>
+                    <Separator/>
+                    <MenuItem Header="장치 내보내기..." Click="Menu_ExportDevicesExcel"/>
+                    <MenuItem Header="케이블 내보내기..." Click="Menu_ExportCablesExcel"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="PDF로 내보내기..." Click="Menu_ExportPdf"/>
+                    <MenuItem Header="PPT로 내보내기..." Click="Menu_ExportPptx"/>
+                <Separator/>
+                <MenuItem Header="끝내기" Click="Menu_Exit"/>
+            </MenuItem>
+
+            <MenuItem Header="편집(_E)">
+                <MenuItem Header="실행 취소 (Ctrl+Z)" Click="Menu_Undo"/>
+                <MenuItem Header="다시 실행 (Ctrl+Y)" Click="Menu_Redo"/>
+                <Separator/>
+                <MenuItem Header="복사 (Ctrl+C)" Click="Menu_Copy"/>
+                <MenuItem Header="붙여넣기 (Ctrl+V)" Click="Menu_Paste"/>
+                <MenuItem Header="전체 선택 (Ctrl+A)" Click="Menu_SelectAll"/>
+                <MenuItem Header="선택 항목 삭제 (Delete)" Click="Menu_DeleteSelected"/>
+            </MenuItem>
+
+            <MenuItem Header="보기(_V)">
+                <MenuItem x:Name="MenuPaperSize" Header="용지 방향"/>
+                <MenuItem Header="지정 페이지로 맞추기..."
+                          Click="Menu_FitContentToA3Aspect"/>
+                <Separator/>
+                <MenuItem Header="확대 (Ctrl+휠)" Click="Menu_ZoomIn"/>
+                <MenuItem Header="축소 (Ctrl+휠)" Click="Menu_ZoomOut"/>
+                <MenuItem Header="화면 맞춤 (100%)" Click="Menu_ZoomReset"/>
+                <Separator/>
+                <MenuItem x:Name="MenuGridVisible" Header="격자 표시"
+                          IsCheckable="True" IsChecked="True"
+                          Click="Menu_GridVisibility"/>
+            </MenuItem>
+
+            <MenuItem Header="추가(_R)">
+                <MenuItem Header="장치 추가..." Click="Menu_RegisterDevice"/>
+                <MenuItem Header="케이블 추가..." Click="Menu_RegisterCable"/>
+            </MenuItem>
+
+            <MenuItem Header="도형(_P)">
+                <MenuItem Header="사각형" Click="Menu_AddShapeRectangle"/>
+                <MenuItem Header="타원" Click="Menu_AddShapeEllipse"/>
+                <MenuItem Header="직선" Click="Menu_AddShapeLine"/>
+                <MenuItem Header="꺾인 선" Click="Menu_AddShapeElbowLine"/>
+                <MenuItem Header="텍스트 상자" Click="Menu_AddShapeText"/>
+                <MenuItem Header="이미지..." Click="Menu_AddImage"/>
+                <Separator/>
+                <MenuItem Header="맨 앞으로 가져오기" Click="Menu_BringShapeToFront"/>
+                <MenuItem Header="한 단계 앞으로 가져오기" Click="Menu_BringShapeForward"/>
+                <MenuItem Header="한 단계 뒤로 보내기" Click="Menu_SendShapeBackward"/>
+                <MenuItem Header="맨 뒤로 보내기" Click="Menu_SendShapeToBack"/>
+            </MenuItem>
+
+            <MenuItem Header="정렬(_A)">
+                <MenuItem Header="케이블/포트명 자동정리" Click="Menu_AutoArrangeAllCables"
+                          ToolTip="케이블 경로는 유지하고 모든 케이블명과 포트명만 보기 좋게 정리"/>
+                <MenuItem Header="구역 설정" Click="BeginZoneSettingMode_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="설정(_S)">
+                <MenuItem Header="화면 테마">
+                    <MenuItem x:Name="SoftOrangeThemeMenuItem" Header="주황색 라이트 (기본)"
+                              Tag="SoftOrange" IsCheckable="True" Click="ThemeMenuItem_Click"/>
+                    <MenuItem x:Name="SkyBlueThemeMenuItem" Header="하늘색 라이트"
+                              Tag="SkyBlue" IsCheckable="True" Click="ThemeMenuItem_Click"/>
+                    <Separator/>
+                    <MenuItem x:Name="DarkThemeMenuItem" Header="다크 모드"
+                              Tag="Dark" IsCheckable="True" Click="ThemeMenuItem_Click"/>
+                </MenuItem>
+                <Separator/>
+                <MenuItem Header="테마 및 장치 색상 상세 설정..." Click="Menu_Settings"/>
+                <Separator/>
+                <MenuItem Header="커넥터 라이브러리 내보내기..." Click="Menu_ExportConnectorLibrary"/>
+                <MenuItem Header="커넥터 라이브러리 가져오기..." Click="Menu_ImportConnectorLibrary"/>
+            </MenuItem>
+
+            <MenuItem Header="도움말(_H)">
+                <MenuItem Header="정보" Click="Menu_About"/>
+            </MenuItem>
+        </Menu>
+
+        <!-- 선택 상태에 따라 홈/텍스트 도구가 바뀌는 파워포인트식 상황별 팔레트 -->
+        <Border x:Name="TextFormatPalette" DockPanel.Dock="Top"
+                Background="{DynamicResource AppRibbonBrush}"
+                BorderBrush="{DynamicResource AppBorderBrush}"
+                BorderThickness="0,1,0,1" Padding="8,5">
+            <Border.Resources>
+                <Style TargetType="{x:Type Button}"
+                       BasedOn="{StaticResource ToolbarButtonStyle}">
+                    <Setter Property="Padding" Value="6,2"/>
+                    <Setter Property="MinWidth" Value="0"/>
+                </Style>
+                <Style TargetType="{x:Type ToggleButton}"
+                       BasedOn="{StaticResource ToolbarToggleButtonStyle}">
+                    <Setter Property="Padding" Value="5,2"/>
+                    <Setter Property="MinWidth" Value="0"/>
+                </Style>
+                <Style TargetType="{x:Type ComboBox}"
+                       BasedOn="{StaticResource {x:Type ComboBox}}">
+                    <Setter Property="Padding" Value="3,1"/>
+                    <Setter Property="MinWidth" Value="0"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+                <Style TargetType="{x:Type ComboBoxItem}"
+                       BasedOn="{StaticResource {x:Type ComboBoxItem}}">
+                    <Setter Property="Padding" Value="3,2"/>
+                    <Setter Property="HorizontalContentAlignment" Value="Center"/>
+                    <Setter Property="VerticalContentAlignment" Value="Center"/>
+                </Style>
+            </Border.Resources>
+            <Grid>
+                <WrapPanel x:Name="HomePalette" Orientation="Horizontal">
+                    <StackPanel Width="90" Margin="0,0,12,0">
+                        <TextBlock Text="홈" FontWeight="SemiBold" FontSize="12"/>
+                        <TextBlock Text="기본 도구" Foreground="{DynamicResource AppMutedTextBrush}" FontSize="10"/>
+                    </StackPanel>
+                    <Border Width="1" Background="{DynamicResource AppDividerBrush}" Margin="0,0,12,0"/>
+                    <Button Content="＋ 새 프로젝트" Width="96" Height="32" Margin="0,0,4,0"
+                            Click="Menu_NewProject"/>
+                    <Button Content="열기" Width="58" Height="32" Margin="0,0,4,0"
+                            Click="Menu_OpenProject"/>
+                    <Button Content="저장" Width="58" Height="32" Margin="0,0,12,0"
+                            Click="Menu_SaveProject"/>
+                    <Border Width="1" Background="{DynamicResource AppDividerBrush}" Margin="0,0,12,0"/>
+                    <Button x:Name="ShapeGalleryButton" Content="도형 삽입 ▾"
+                            Width="86" Height="30" Margin="0,0,8,0"
+                            Click="ShapeGalleryButton_Click"/>
+                    <Button x:Name="BeginZoneSettingButton" Content="구역 설정"
+                            Width="78" Height="30" Margin="0,0,8,0"
+                            Click="BeginZoneSettingMode_Click"
+                            ToolTip="배경에 이름 있는 직사각형 구역을 설정"/>
+                    <Button x:Name="ExitZoneSettingButton" Content="설정모드 나가기"
+                            Style="{StaticResource PrimaryButtonStyle}"
+                            Width="116" Height="30" Margin="0,0,8,0"
+                            Visibility="Collapsed"
+                            Click="ExitZoneSettingMode_Click"/>
+                    <ToggleButton x:Name="ShapeToolRect" Content="□ 사각형"
+                                  Visibility="Collapsed"
+                                  Width="72" Height="30" Margin="0,0,3,0"
+                                  Click="ShapeTool_Click" Tag="Rectangle"/>
+                    <ToggleButton x:Name="ShapeToolEllipse" Content="○ 타원"
+                                  Visibility="Collapsed"
+                                  Width="66" Height="30" Margin="0,0,3,0"
+                                  Click="ShapeTool_Click" Tag="Ellipse"/>
+                    <ToggleButton x:Name="ShapeToolLine" Content="／ 선"
+                                  Visibility="Collapsed"
+                                  Width="58" Height="30" Margin="0,0,3,0"
+                                  Click="ShapeTool_Click" Tag="Line"/>
+                    <ToggleButton x:Name="ShapeToolText" Content="A 텍스트"
+                                  Visibility="Collapsed"
+                                  Width="72" Height="30" Margin="0,0,12,0"
+                                  Click="ShapeTool_Click" Tag="Text"/>
+                    <Popup x:Name="ShapeGalleryPopup" Placement="Bottom"
+                           PlacementTarget="{Binding ElementName=ShapeGalleryButton}"
+                           StaysOpen="False" AllowsTransparency="True">
+                        <Border Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppStrongBorderBrush}"
+                                BorderThickness="1" CornerRadius="8"
+                                Padding="10" Margin="0,4,0,0">
+                            <ScrollViewer MaxHeight="560" VerticalScrollBarVisibility="Auto"
+                                          HorizontalScrollBarVisibility="Disabled">
+                                <StackPanel x:Name="ShapeGalleryContent" Width="380"/>
+                            </ScrollViewer>
+                        </Border>
+                    </Popup>
+                    <Border Width="1" Background="{DynamicResource AppDividerBrush}" Margin="0,0,12,0"/>
+                    <Button Content="케이블/포트명 자동정리" Width="154" Height="30"
+                            Click="Menu_AutoArrangeAllCables"
+                            ToolTip="케이블 경로와 분기 구조는 유지하고 모든 케이블명과 포트명만 보기 좋게 정리"/>
+                    <Button Content="커넥터 결합 검사" Width="118" Height="30"
+                            Margin="6,0,0,0" Click="AnalyzeD38999Connections_Click"
+                            ToolTip="현재 시트에서 서로 연결된 D38999 커넥터끼리의 규격 결합 가능 여부를 검사"/>
+                    <Button x:Name="CableNamesToggleButton"
+                            Content="케이블명 모두 숨김" Width="132" Height="30"
+                            Margin="6,0,0,0" Click="ToggleAllCableNames_Click"
+                            ToolTip="현재 상태에 따라 모든 케이블명을 한 번에 표시하거나 숨김"/>
+                    <Button x:Name="HomeArrangeButton" Content="선택 개체 정렬 ▾"
+                            Width="112" Height="30" Margin="6,0,0,0"
+                            IsEnabled="False" Click="ObjectArrangeButton_Click"
+                            ToolTip="장치·도형·케이블 포트를 함께 맞춤"/>
+                </WrapPanel>
+
+                <Grid x:Name="TextFormattingScrollViewer"
+                      Visibility="Collapsed">
+                <WrapPanel x:Name="TextFormattingPanel"
+                           Orientation="Horizontal">
+                    <WrapPanel x:Name="TextOnlyTools" Orientation="Horizontal"
+                               MaxWidth="{Binding ActualWidth, ElementName=TextFormattingScrollViewer}">
+                    <StackPanel Width="100" Margin="0,0,8,0">
+                        <TextBlock Text="텍스트 서식" FontWeight="SemiBold" FontSize="12"/>
+                        <TextBlock x:Name="TextFormatTargetLabel" Text=""
+                                   Foreground="{DynamicResource AppMutedTextBrush}" FontSize="10"
+                                   TextTrimming="CharacterEllipsis"/>
+                    </StackPanel>
+                    <Border Width="1" Background="{DynamicResource AppDividerBrush}" Margin="0,0,12,0"/>
+                    <ComboBox x:Name="FontFamilyCombo" Width="150" Height="28"
+                              IsEditable="True" Margin="0,0,4,0"
+                              SelectionChanged="FontFamilyCombo_SelectionChanged"
+                              LostKeyboardFocus="FontFamilyCombo_LostKeyboardFocus"
+                              ToolTip="글꼴"/>
+                    <StackPanel Orientation="Horizontal" Margin="0,0,5,0">
+                        <ComboBox x:Name="FontSizeCombo" Width="52" Height="28"
+                                  IsEditable="True"
+                                  SelectionChanged="FontSizeCombo_SelectionChanged"
+                                  LostKeyboardFocus="FontSizeCombo_LostKeyboardFocus"
+                                  PreviewKeyDown="FontSizeCombo_PreviewKeyDown"
+                                  ToolTip="글자 크기"/>
+                        <Button Content="−" Width="24" Height="28" Padding="0"
+                                FontFamily="Arial" FontSize="14"
+                                Tag="-1" Click="FontSizeStepButton_Click"
+                                ToolTip="글자 크기 1pt 줄이기"/>
+                        <Button Content="+" Width="24" Height="28" Padding="0"
+                                FontFamily="Arial" FontSize="14"
+                                Tag="1" Click="FontSizeStepButton_Click"
+                                ToolTip="글자 크기 1pt 키우기"/>
+                    </StackPanel>
+                    <ToggleButton x:Name="TextBoldButton" Content="B"
+                                  FontWeight="Bold" Width="32" Height="28"
+                                  Margin="0,0,2,0" Click="TextStyleButton_Click"
+                                  ToolTip="굵게"/>
+                    <ToggleButton x:Name="TextItalicButton" Content="I"
+                                  FontStyle="Italic" Width="32" Height="28"
+                                  Margin="0,0,2,0" Click="TextStyleButton_Click"
+                                  ToolTip="기울임"/>
+                    <ToggleButton x:Name="TextUnderlineButton" Content="U"
+                                  Width="32" Height="28" Margin="0,0,8,0"
+                                  Click="TextStyleButton_Click" ToolTip="밑줄"/>
+                    <Button x:Name="TextColorButton" Width="38" Height="28"
+                            Margin="0,0,8,0" Click="TextColorButton_Click"
+                            ToolTip="글자색">
+                        <StackPanel>
+                            <TextBlock Text="A" FontWeight="Bold" HorizontalAlignment="Center"/>
+                            <Rectangle x:Name="TextColorSwatch" Height="3" Width="22"
+                                       Fill="Black" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </Button>
+                    <Border Width="1" Background="{DynamicResource AppDividerBrush}" Margin="0,0,12,0"/>
+                    <ToggleButton x:Name="TextAlignLeftButton" Content="≡←"
+                                  Width="38" Height="28" Margin="0,0,2,0"
+                                  Tag="Left" Click="TextAlignmentButton_Click"
+                                  ToolTip="글자 왼쪽 맞춤"/>
+                    <ToggleButton x:Name="TextAlignCenterButton" Content="≡"
+                                  Width="38" Height="28" Margin="0,0,2,0"
+                                  Tag="Center" Click="TextAlignmentButton_Click"
+                                  ToolTip="글자 가운데 맞춤"/>
+                    <ToggleButton x:Name="TextAlignRightButton" Content="→≡"
+                                  Width="38" Height="28" Margin="0,0,12,0"
+                                  Tag="Right" Click="TextAlignmentButton_Click"
+                                  ToolTip="글자 오른쪽 맞춤"/>
+                    </WrapPanel>
+                    <Border Width="1" Background="{DynamicResource AppDividerBrush}" Margin="0,0,12,0"/>
+                    <WrapPanel x:Name="ShapeObjectTools" Orientation="Horizontal"
+                               MaxWidth="{Binding ActualWidth, ElementName=TextFormattingScrollViewer}"
+                               Visibility="Collapsed">
+                        <Button x:Name="ShapeFillButton" Height="30"
+                                Margin="0,0,3,0" Click="ShapeFillButton_Click"
+                                ToolTip="도형 채우기 색">
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle x:Name="ShapeFillSwatch" Height="18" Width="18"
+                                           Margin="0,0,5,0" Fill="White" Stroke="{DynamicResource AppStrongBorderBrush}"
+                                           StrokeThickness="1" VerticalAlignment="Center"/>
+                                <TextBlock Text="도형 채우기" VerticalAlignment="Center"/>
+                                <TextBlock Text="▼" FontSize="8" Margin="6,0,0,0"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <Button x:Name="ShapeStrokeButton" Height="30"
+                                Margin="0,0,3,0" Click="ShapeStrokeButton_Click"
+                                ToolTip="도형 윤곽선 색">
+                            <StackPanel Orientation="Horizontal">
+                                <Rectangle x:Name="ShapeStrokeSwatch" Height="18" Width="18"
+                                           Margin="0,0,5,0" Fill="Black" Stroke="{DynamicResource AppStrongBorderBrush}"
+                                           StrokeThickness="1" VerticalAlignment="Center"/>
+                                <TextBlock Text="도형 윤곽선" VerticalAlignment="Center"/>
+                                <TextBlock Text="▼" FontSize="8" Margin="6,0,0,0"
+                                           VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button>
+                        <WrapPanel x:Name="LineShapeTools" Orientation="Horizontal"
+                                   Visibility="Collapsed" Margin="3,0,3,0">
+                            <TextBlock Text="굵기" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <ComboBox x:Name="LineThicknessCombo" Width="50" Height="28"
+                                      IsEditable="True" Margin="0,0,4,0"
+                                      DropDownOpened="LineOptionCombo_DropDownOpened"
+                                      DropDownClosed="LineOptionCombo_DropDownClosed"
+                                      PreviewMouseMove="LineOptionCombo_PreviewMouseMove"
+                                      SelectionChanged="LineThicknessCombo_SelectionChanged"
+                                      PreviewKeyDown="LineThicknessCombo_PreviewKeyDown"
+                                      LostKeyboardFocus="LineThicknessCombo_LostKeyboardFocus"/>
+                            <TextBlock Text="선 형태" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <ComboBox x:Name="LineStyleCombo" Width="62" Height="28" Margin="0,0,4,0"
+                                      DropDownOpened="LineOptionCombo_DropDownOpened"
+                                      DropDownClosed="LineOptionCombo_DropDownClosed"
+                                      PreviewMouseMove="LineOptionCombo_PreviewMouseMove"
+                                      SelectionChanged="LineStyleCombo_SelectionChanged">
+                                <ComboBoxItem Content="실선" Tag="Solid"/>
+                                <ComboBoxItem Content="점선" Tag="Dash"/>
+                                <ComboBoxItem Content="도트" Tag="Dot"/>
+                                <ComboBoxItem Content="이중선" Tag="Double"/>
+                            </ComboBox>
+                            <TextBlock Text="시작" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <ComboBox x:Name="LineStartCapCombo" Width="64" Height="28" Margin="0,0,4,0"
+                                      DropDownOpened="LineOptionCombo_DropDownOpened"
+                                      DropDownClosed="LineOptionCombo_DropDownClosed"
+                                      PreviewMouseMove="LineOptionCombo_PreviewMouseMove"
+                                      SelectionChanged="LineStartCapCombo_SelectionChanged">
+                                <ComboBoxItem Content="각진 끝" Tag="Square"/>
+                                <ComboBoxItem Content="둥근 끝" Tag="Round"/>
+                                <ComboBoxItem Content="화살표" Tag="Arrow"/>
+                            </ComboBox>
+                            <TextBlock Text="끝" VerticalAlignment="Center" Margin="0,0,4,0"/>
+                            <ComboBox x:Name="LineEndCapCombo" Width="64" Height="28" Margin="0,0,4,0"
+                                      DropDownOpened="LineOptionCombo_DropDownOpened"
+                                      DropDownClosed="LineOptionCombo_DropDownClosed"
+                                      PreviewMouseMove="LineOptionCombo_PreviewMouseMove"
+                                      SelectionChanged="LineEndCapCombo_SelectionChanged">
+                                <ComboBoxItem Content="각진 끝" Tag="Square"/>
+                                <ComboBoxItem Content="둥근 끝" Tag="Round"/>
+                                <ComboBoxItem Content="화살표" Tag="Arrow"/>
+                            </ComboBox>
+                        </WrapPanel>
+                        <Button x:Name="ShapeEditTextButton" Content="텍스트 편집" Height="28"
+                                Margin="0,0,3,0" Click="ShapeEditTextButton_Click"
+                                ToolTip="선택한 도형 안의 텍스트 편집"/>
+                        <Button x:Name="ShapeEditingButton" Content="도형 편집 ▾" Height="28"
+                                Margin="0,0,3,0" Click="ShapeEditingButton_Click"
+                                ToolTip="도형 변경 · 반전 · 그룹 · 점 편집 · 서식"/>
+                        <Button x:Name="ShapeOrderButton" Content="앞뒤 순서 ▼"
+                                Height="28" Margin="0,0,8,0"
+                                Click="ShapeOrderButton_Click"
+                                ToolTip="도형을 앞으로 가져오거나 뒤로 보내기"/>
+                    </WrapPanel>
+                    <Button x:Name="ObjectArrangeButton" Content="개체 정렬 ▼"
+                            Width="92" Height="28" IsEnabled="False"
+                            Click="ObjectArrangeButton_Click"
+                            ToolTip="두 개 이상의 장치·도형·케이블 포트를 맞추거나 같은 간격으로 배치"/>
+                </WrapPanel>
+                </Grid>
+            </Grid>
+        </Border>
+
+        <StatusBar DockPanel.Dock="Bottom">
+            <StatusBarItem>
+                <TextBlock x:Name="StatusText" Text="준비"/>
+            </StatusBarItem>
+        </StatusBar>
+
+        <!-- 시트 탭 (엑셀처럼): 클릭 전환 / 더블클릭 이름변경 / 우클릭 메뉴 / 끌어서 순서변경 -->
+        <Border DockPanel.Dock="Bottom" Background="{DynamicResource AppStatusBrush}"
+                BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="0,1,0,0">
+            <DockPanel>
+            <Button DockPanel.Dock="Right" Content="＋" Style="{StaticResource CompactIconButtonStyle}" Width="30" Margin="2"
+                        Padding="0"
+                        Click="SheetAdd_Click" ToolTip="시트 추가"/>
+                <ScrollViewer HorizontalScrollBarVisibility="Auto"
+                              VerticalScrollBarVisibility="Disabled">
+                    <ListBox x:Name="SheetTabs" BorderThickness="0" Background="Transparent"
+                             AllowDrop="True"
+                             SelectionChanged="SheetTabs_SelectionChanged"
+                             PreviewMouseLeftButtonDown="SheetTabs_PreviewMouseLeftButtonDown"
+                             PreviewMouseMove="SheetTabs_PreviewMouseMove"
+                             PreviewMouseRightButtonDown="SheetTabs_PreviewMouseRightButtonDown"
+                             Drop="SheetTabs_Drop">
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <StackPanel Orientation="Horizontal"/>
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Padding="12,5" Margin="1,2,1,0" Background="{DynamicResource AppPanelBrush}"
+                                        BorderBrush="{DynamicResource AppCardBorderBrush}" BorderThickness="1" CornerRadius="5,5,0,0">
+                                    <TextBlock Text="{Binding Name}" FontSize="12"/>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+            </DockPanel>
+        </Border>
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="210"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- 사이드바: 탭(장치/케이블) -->
+            <Border Grid.Column="0" Background="{DynamicResource AppSidebarBrush}"
+                    BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="0,0,1,0">
+                <TabControl x:Name="SidebarTabs" Background="Transparent"
+                            BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="0">
+                    <TabItem Header="장치">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="8,0,8,4">
+                                <TextBlock Text="정렬" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <ComboBox x:Name="DeviceSortCombo" Width="90" SelectedIndex="0"
+                                          SelectionChanged="SidebarSortCombo_SelectionChanged">
+                                    <ComboBoxItem Content="생성순" Tag="Created"/>
+                                    <ComboBoxItem Content="이름순" Tag="Name"/>
+                                </ComboBox>
+                            </StackPanel>
+                            <TextBlock DockPanel.Dock="Top" Text="드래그: 캔버스에 배치 / 더블클릭: 수정"
+                                       Foreground="{DynamicResource AppMutedTextBrush}" FontSize="9" Margin="10,0,10,6" TextWrapping="Wrap"/>
+                            <Button DockPanel.Dock="Bottom" Content="＋ 새 장치 범주" Style="{StaticResource SidebarCreateButtonStyle}" Height="32"
+                                    Margin="8,6,8,10" Click="AddDeviceCategoryButton_Click"
+                                    ToolTip="목록 아래에 새로운 장치 그룹을 추가"/>
+                            <ListBox x:Name="DeviceListBox" Margin="4" BorderThickness="0"
+                                     Background="Transparent"
+                                     HorizontalContentAlignment="Stretch"
+                                     PreviewMouseLeftButtonDown="DeviceListBox_PreviewMouseLeftButtonDown"
+                                     PreviewMouseMove="DeviceListBox_PreviewMouseMove"
+                                     PreviewMouseLeftButtonUp="DeviceListBox_PreviewMouseLeftButtonUp"
+                                     PreviewMouseRightButtonDown="DeviceListBox_PreviewMouseRightButtonDown">
+                                <ListBox.GroupStyle>
+                                    <GroupStyle ContainerStyle="{StaticResource SidebarGroupContainerStyle}"/>
+                                </ListBox.GroupStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppCardBorderBrush}" BorderThickness="1"
+                                                CornerRadius="7" Padding="7,5" Margin="2,2" ToolTip="{Binding KindText}">
+                                            <StackPanel Orientation="Horizontal">
+                                                <Rectangle Width="10" Height="10" Margin="0,0,6,0"
+                                                           VerticalAlignment="Center"
+                                                           Stroke="Gray" StrokeThickness="1"
+                                                           Fill="{Binding KindBrush}"/>
+                                                <TextBlock Text="{Binding Name}" FontSize="12"
+                                                           VerticalAlignment="Center" TextWrapping="NoWrap"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DockPanel>
+                    </TabItem>
+
+                    <TabItem Header="케이블">
+                        <DockPanel>
+                            <StackPanel DockPanel.Dock="Top" Orientation="Horizontal" Margin="8,0,8,4">
+                                <TextBlock Text="정렬" VerticalAlignment="Center" Margin="0,0,6,0"/>
+                                <ComboBox x:Name="CableSortCombo" Width="90" SelectedIndex="0"
+                                          SelectionChanged="SidebarSortCombo_SelectionChanged">
+                                    <ComboBoxItem Content="생성순" Tag="Created"/>
+                                    <ComboBoxItem Content="이름순" Tag="Name"/>
+                                </ComboBox>
+                            </StackPanel>
+                            <TextBlock DockPanel.Dock="Top" Text="드래그: 캔버스에 배치 / 더블클릭: 수정"
+                                       Foreground="{DynamicResource AppMutedTextBrush}" FontSize="9" Margin="10,0,10,6" TextWrapping="Wrap"/>
+                            <Button DockPanel.Dock="Bottom" Content="＋ 새 케이블 범주" Style="{StaticResource SidebarCreateButtonStyle}" Height="32"
+                                    Margin="8,6,8,10" Click="AddCableCategoryButton_Click"
+                                    ToolTip="목록 아래에 새로운 케이블 그룹을 추가"/>
+                            <ListBox x:Name="CableListBox" Margin="4" BorderThickness="0"
+                                     Background="Transparent"
+                                     HorizontalContentAlignment="Stretch"
+                                     PreviewMouseLeftButtonDown="CableListBox_PreviewMouseLeftButtonDown"
+                                     PreviewMouseMove="CableListBox_PreviewMouseMove"
+                                     PreviewMouseLeftButtonUp="CableListBox_PreviewMouseLeftButtonUp"
+                                     PreviewMouseRightButtonDown="CableListBox_PreviewMouseRightButtonDown">
+                                <ListBox.GroupStyle>
+                                    <GroupStyle ContainerStyle="{StaticResource CableSidebarGroupContainerStyle}"/>
+                                </ListBox.GroupStyle>
+                                <ListBox.ItemTemplate>
+                                    <DataTemplate>
+                                        <Border Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppCardBorderBrush}" BorderThickness="1"
+                                                CornerRadius="7" Padding="7,5" Margin="2,2">
+                                            <StackPanel Orientation="Horizontal">
+                                                <TextBlock Text="⎓" Margin="0,0,6,0" VerticalAlignment="Center"
+                                                           Foreground="{DynamicResource AppMutedTextBrush}"/>
+                                                <TextBlock Text="{Binding Name}" FontSize="12"
+                                                           VerticalAlignment="Center"/>
+                                            </StackPanel>
+                                        </Border>
+                                    </DataTemplate>
+                                </ListBox.ItemTemplate>
+                            </ListBox>
+                        </DockPanel>
+                    </TabItem>
+
+                </TabControl>
+            </Border>
+
+            <!-- 작업 영역: Ctrl+휠 확대축소, 휠버튼 드래그로 이동, 빈 곳 드래그로 영역선택 -->
+            <ScrollViewer x:Name="MainScrollViewer" Grid.Column="1" Background="{DynamicResource AppWorkspaceBrush}"
+                          HorizontalScrollBarVisibility="Auto"
+                          VerticalScrollBarVisibility="Auto"
+                          PreviewMouseWheel="MainScrollViewer_PreviewMouseWheel"
+                          PreviewMouseDown="MainScrollViewer_PreviewMouseDown"
+                          PreviewMouseMove="MainScrollViewer_PreviewMouseMove"
+                          PreviewMouseUp="MainScrollViewer_PreviewMouseUp">
+                <Grid Margin="40">
+                    <Grid.LayoutTransform>
+                        <ScaleTransform x:Name="CanvasScale" ScaleX="1" ScaleY="1"/>
+                    </Grid.LayoutTransform>
+                    <Border x:Name="PageBorder"
+                            Background="White"
+                            BorderBrush="{DynamicResource AppStrongBorderBrush}" BorderThickness="1"
+                            HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Border.Effect>
+                            <DropShadowEffect Color="#7F8C99" BlurRadius="14"
+                                              ShadowDepth="2" Opacity="0.28"/>
+                        </Border.Effect>
+                        <Canvas x:Name="MainCanvas"
+                                Background="{StaticResource DiagramGridBrush}"
+                                AllowDrop="True"
+                                Drop="MainCanvas_Drop"
+                                DragOver="MainCanvas_DragOver"
+                                PreviewMouseLeftButtonDown="MainCanvas_PreviewMouseLeftButtonDown"
+                                PreviewMouseRightButtonDown="MainCanvas_PreviewMouseRightButtonDown"
+                                MouseLeftButtonDown="MainCanvas_MouseLeftButtonDown"
+                                MouseMove="MainCanvas_MouseMove"
+                                MouseLeftButtonUp="MainCanvas_MouseLeftButtonUp"/>
+                    </Border>
+                </Grid>
+            </ScrollViewer>
+
+            <Border x:Name="AutoArrangeExclusionPanel" Grid.Column="2" Width="250"
+                    Visibility="Collapsed" Background="{DynamicResource AppSidebarBrush}"
+                    BorderBrush="{DynamicResource AppStrongBorderBrush}" BorderThickness="1,0,0,0">
+                <DockPanel>
+                    <Grid DockPanel.Dock="Top" Margin="12,12,8,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="전체 정리 제외 케이블" FontWeight="SemiBold"
+                                   FontSize="14" VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" Content="×" Style="{StaticResource CompactIconButtonStyle}" Width="28" Height="26"
+                                Click="CloseAutoArrangeExclusionPanel_Click"/>
+                    </Grid>
+                    <StackPanel DockPanel.Dock="Bottom" Margin="10,8,10,12">
+                        <Button x:Name="BeginAutoArrangeExclusionButton"
+                                Content="제외 케이블 설정" Height="32"
+                                Click="BeginAutoArrangeExclusionMode_Click"/>
+                        <Button Content="완료" Style="{StaticResource PrimaryButtonStyle}" Height="32" Margin="0,6,0,0"
+                                Click="CompleteAutoArrangeExclusionMode_Click"/>
+                    </StackPanel>
+                    <TextBlock DockPanel.Dock="Top" Margin="12,0,12,8"
+                               Foreground="{DynamicResource AppMutedTextBrush}" FontSize="10" TextWrapping="Wrap"
+                               Text="설정 모드에서 캔버스의 케이블을 누르면 제외하거나 다시 포함합니다. 제외 케이블은 설정 중에만 빨간색으로 표시됩니다."/>
+                    <ListBox x:Name="AutoArrangeExclusionList" Margin="8"
+                             BorderThickness="0" Background="Transparent"
+                             HorizontalContentAlignment="Stretch">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppCardBorderBrush}"
+                                        BorderThickness="1" CornerRadius="7"
+                                        Padding="7,5" Margin="1,2">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                        </Grid.ColumnDefinitions>
+                                        <TextBlock Text="{Binding Name}" TextTrimming="CharacterEllipsis"/>
+                                        <TextBlock Grid.Column="1" Text="{Binding StateText}"
+                                                   Foreground="{Binding StateBrush}"
+                                                   FontWeight="SemiBold" Margin="8,0,0,0"/>
+                                    </Grid>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+
+            <Border x:Name="ZoneSettingPanel" Grid.Column="2" Width="270"
+                    Visibility="Collapsed" Background="{DynamicResource AppSidebarBrush}"
+                    BorderBrush="{DynamicResource AppStrongBorderBrush}" BorderThickness="1,0,0,0">
+                <DockPanel>
+                    <Grid DockPanel.Dock="Top" Margin="12,12,8,8">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="구역 설정" FontWeight="SemiBold"
+                                   FontSize="14" VerticalAlignment="Center"/>
+                        <Button Grid.Column="1" Content="×" Style="{StaticResource CompactIconButtonStyle}"
+                                Width="28" Height="26" Click="ExitZoneSettingMode_Click"/>
+                    </Grid>
+                    <StackPanel DockPanel.Dock="Bottom" Margin="10,8,10,12">
+                        <Button x:Name="CreateZoneButton" Content="새 구역 만들기" Height="32"
+                                Click="BeginZoneCreation_Click"/>
+                        <UniformGrid Columns="2" Margin="0,6,0,0">
+                            <Button x:Name="RenameZoneButton" Content="이름 변경" Height="30" Margin="0,0,3,0"
+                                    IsEnabled="False" Click="RenameSelectedZone_Click"/>
+                            <Button x:Name="DeleteZoneButton" Content="선택 구역 삭제" Height="30" Margin="3,0,0,0"
+                                    IsEnabled="False" Click="DeleteSelectedZone_Click"/>
+                        </UniformGrid>
+                        <Button Content="설정모드 나가기" Style="{StaticResource PrimaryButtonStyle}"
+                                Height="32" Margin="0,6,0,0" Click="ExitZoneSettingMode_Click"/>
+                    </StackPanel>
+                    <TextBlock x:Name="ZoneModeHintText" DockPanel.Dock="Top" Margin="12,0,12,8"
+                               Foreground="{DynamicResource AppMutedTextBrush}" FontSize="10" TextWrapping="Wrap"
+                               Text="기존 구역을 선택하면 이동하거나 테두리의 조절점을 끌어 크기를 바꿀 수 있습니다."/>
+                    <ListBox x:Name="ZoneSettingList" Margin="8" BorderThickness="0"
+                             Background="Transparent" HorizontalContentAlignment="Stretch"
+                             SelectionChanged="ZoneSettingList_SelectionChanged">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Border Background="{DynamicResource AppPanelBrush}"
+                                        BorderBrush="{DynamicResource AppCardBorderBrush}"
+                                        BorderThickness="1" CornerRadius="7" Padding="8,6" Margin="1,2">
+                                    <TextBlock Text="{Binding Zone.Name}" TextTrimming="CharacterEllipsis"/>
+                                </Border>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </DockPanel>
+            </Border>
+        </Grid>
+    </DockPanel>
+</Window>

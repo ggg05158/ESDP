@@ -1,0 +1,140 @@
+<Window x:Class="ESDP.CableSignalEditorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="케이블 신호 상세 설정"
+        Width="1500" Height="880" MinWidth="1050" MinHeight="620"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip"
+        PreviewKeyDown="Window_PreviewKeyDown">
+    <Window.Resources>
+        <Style x:Key="SignalCellText" TargetType="TextBlock">
+            <Setter Property="Margin" Value="2,0"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="SignalCenteredCellText" TargetType="TextBlock" BasedOn="{StaticResource SignalCellText}">
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="HorizontalAlignment" Value="Stretch"/>
+        </Style>
+        <Style x:Key="SignalCellEditor" TargetType="TextBox">
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Padding" Value="2,0"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="SignalCenteredCellEditor" TargetType="TextBox" BasedOn="{StaticResource SignalCellEditor}">
+            <Setter Property="TextAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="SignalColumnHeader" TargetType="DataGridColumnHeader">
+            <Setter Property="FontSize" Value="10"/>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Padding" Value="2"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+        </Style>
+        <Style x:Key="SignalRow" TargetType="DataGridRow">
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelectedAcrossTables}" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource AppSubtlePanelBrush}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource AppTextBrush}"/>
+                </DataTrigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource AppSubtlePanelBrush}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource AppTextBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <Style x:Key="SignalCell" TargetType="DataGridCell">
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+            <Setter Property="Padding" Value="0"/>
+            <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="Transparent"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Style.Triggers>
+                <DataTrigger Binding="{Binding IsSelectedAcrossTables}" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource AppSubtlePanelBrush}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource AppTextBrush}"/>
+                </DataTrigger>
+                <Trigger Property="IsSelected" Value="True">
+                    <Setter Property="Background" Value="{DynamicResource AppAccentLightBrush}"/>
+                    <Setter Property="Foreground" Value="{DynamicResource AppTextBrush}"/>
+                    <Setter Property="BorderBrush" Value="Transparent"/>
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+
+    <Grid Margin="18">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0" Margin="0,0,0,10">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+            <StackPanel>
+                <TextBlock x:Name="CableTitleText" FontSize="20" FontWeight="SemiBold"/>
+                <TextBlock Margin="0,5,0,0" Foreground="{DynamicResource AppMutedTextBrush}" FontSize="11"
+                           Text="왼쪽은 회선 정보이고, 각 포트는 독립된 표입니다. 어느 표에서든 한 줄을 선택하면 같은 회선이 함께 표시됩니다."/>
+            </StackPanel>
+            <Border Grid.Column="1" Padding="14,8" Background="{DynamicResource AppInfoPanelBrush}" BorderBrush="{DynamicResource AppInfoBorderBrush}"
+                    BorderThickness="1" CornerRadius="3" VerticalAlignment="Center">
+                <TextBlock x:Name="SummaryText" Foreground="{DynamicResource AppInfoTextBrush}"/>
+            </Border>
+        </Grid>
+        <DockPanel Grid.Row="1" Margin="0,0,0,9">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <TextBlock Text="핀 마크" FontWeight="SemiBold" VerticalAlignment="Center" Margin="0,0,8,0"/>
+                <Button x:Name="RecentPinMarkButton" Style="{StaticResource TileButtonStyle}" Width="28" Height="30" Margin="0,0,4,0"
+                        Padding="5" ToolTip="가장 최근에 사용한 핀 마크 색을 바로 적용합니다."
+                        Click="RecentPinMarkButton_Click">
+                    <Border x:Name="RecentPinMarkSwatch" Width="14" Height="14"
+                            Background="#FFD966" BorderBrush="#707780" BorderThickness="1"
+                            CornerRadius="1"/>
+                </Button>
+                <Button Content="색 지정…" Style="{StaticResource SubtleButtonStyle}" Width="68" Height="30" Margin="0,0,4,0"
+                        ToolTip="선택한 핀 셀 안쪽에 프로젝트 전용 색상 마크를 표시합니다."
+                        Click="PinMarkColorButton_Click"/>
+                <Button Content="해제" Style="{StaticResource SubtleButtonStyle}" Width="50" Height="30" Margin="0,0,16,0"
+                        Click="ClearPinMarkButton_Click"/>
+                <TextBlock Text="쉴드 메뉴" FontWeight="SemiBold" VerticalAlignment="Center"
+                           Margin="0,0,8,0"/>
+                <Button Content="쉴드" Style="{StaticResource SubtleButtonStyle}" Width="52" Height="30" Margin="0,0,4,0"
+                        Click="CreateShieldButton_Click"/>
+                <Button Content="해제" Style="{StaticResource SubtleButtonStyle}" Width="52" Height="30" Margin="0,0,4,0"
+                        Click="ClearShieldButton_Click"/>
+                <Button Content="본딩" Style="{StaticResource SubtleButtonStyle}" Width="52" Height="30" Margin="0,0,4,0"
+                        Click="BondShieldButton_Click"/>
+                <Button Content="접지" Style="{StaticResource SubtleButtonStyle}" Width="52" Height="30" Margin="0,0,18,0"
+                        Click="GroundShieldButton_Click"/>
+                <CheckBox x:Name="OverallBraidCheck" Content="Overall braid" IsChecked="True"
+                          VerticalAlignment="Center" Margin="0,0,22,0"/>
+                <CheckBox x:Name="TubeCheck" Content="Tube" IsChecked="True"
+                          VerticalAlignment="Center" Margin="0,0,22,0"/>
+                <Button Content="+ 회선 추가" Width="105" Height="30" Margin="0,0,8,0"
+                        Click="AddSignalRowButton_Click"/>
+                <TextBox x:Name="BulkSignalCountBox" Text="10" Width="48" Height="30"
+                         Padding="4,0" VerticalContentAlignment="Center" TextAlignment="Center"
+                         ToolTip="한 번에 추가할 회선 수"/>
+                <Button Content="추가" Width="52" Height="30" Margin="4,0,0,0"
+                        Click="AddMultipleSignalRowsButton_Click"/>
+            </StackPanel>
+            <TextBlock Text="회선 및 포트별 상세 정보" FontSize="14" FontWeight="SemiBold" VerticalAlignment="Center"/>
+        </DockPanel>
+        <Border Grid.Row="2" BorderBrush="{DynamicResource AppStrongBorderBrush}" BorderThickness="1" Background="{DynamicResource AppSubtlePanelBrush}">
+            <ScrollViewer x:Name="TablesScrollViewer" Padding="12"
+                          HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto">
+                <StackPanel x:Name="TablesPanel" Orientation="Horizontal" VerticalAlignment="Top"/>
+            </ScrollViewer>
+        </Border>
+        <Grid Grid.Row="3" Margin="0,14,0,0">
+            <TextBlock Foreground="{DynamicResource AppMutedTextBrush}" FontSize="10.5" VerticalAlignment="Center"
+                       Text="쉴드: s1처럼 같은 번호는 같은 쉴드, 연속된 쉴드 번호는 서로 연결, c1은 해당 핀을 s1 쉴드에 연결합니다."/>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                <Button Content="확인" Style="{StaticResource PrimaryButtonStyle}" Width="120" Height="36" Margin="0,0,10,0" Click="OkButton_Click"/>
+                <Button Content="취소" Width="120" Height="36" Click="CancelButton_Click"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

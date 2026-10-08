@@ -1,0 +1,1194 @@
+{
+  "version": 4,
+  "targets": {
+    "net8.0-windows": {
+      "ClosedXML/0.105.1": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML.Parser": "2.0.0",
+          "DocumentFormat.OpenXml": "[3.1.1, 4.0.0)",
+          "ExcelNumberFormat": "1.1.0",
+          "RBush.Signed": "4.0.0",
+          "SixLabors.Fonts": "[1.0.0, 3.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ClosedXML.Parser/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.5.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ExcelNumberFormat/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/8.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+        }
+      },
+      "Microsoft.Msagl/1.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Msagl/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Msagl.Drawing/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Msagl": "1.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Msagl.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Msagl.Drawing.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Msagl.WpfGraphControl/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Msagl.Drawing": "1.2.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/Microsoft.Msagl.WpfGraphControl.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Msagl.WpfGraphControl.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "PDFsharp-WPF/6.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/PdfSharp-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Cryptography.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Shared.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Snippets-wpf.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.System.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.WPFonts.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/PdfSharp-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Cryptography.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Shared.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Snippets-wpf.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.System.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.WPFonts.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "RBush.Signed/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.IO.Packaging/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        },
+        "runtimeTargets": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "assetType": "runtime",
+            "rid": "win"
+          }
+        }
+      }
+    },
+    "net8.0-windows/win-x86": {
+      "ClosedXML/0.105.1": {
+        "type": "package",
+        "dependencies": {
+          "ClosedXML.Parser": "2.0.0",
+          "DocumentFormat.OpenXml": "[3.1.1, 4.0.0)",
+          "ExcelNumberFormat": "1.1.0",
+          "RBush.Signed": "4.0.0",
+          "SixLabors.Fonts": "[1.0.0, 3.0.0)"
+        },
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.dll": {
+            "related": ".pdb;.xml"
+          }
+        }
+      },
+      "ClosedXML.Parser/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.1/ClosedXML.Parser.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "DocumentFormat.OpenXml.Framework": "3.5.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "DocumentFormat.OpenXml.Framework/3.5.1": {
+        "type": "package",
+        "dependencies": {
+          "System.IO.Packaging": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/DocumentFormat.OpenXml.Framework.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "ExcelNumberFormat/1.1.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/ExcelNumberFormat.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/8.0.3": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "8.0.2"
+        },
+        "compile": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
+        }
+      },
+      "Microsoft.Msagl/1.1.6": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Msagl/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Msagl.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Msagl.Drawing/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Msagl": "1.2.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/Microsoft.Msagl.Drawing.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netstandard2.0/Microsoft.Msagl.Drawing.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "Msagl.WpfGraphControl/1.2.1": {
+        "type": "package",
+        "dependencies": {
+          "Msagl.Drawing": "1.2.1"
+        },
+        "compile": {
+          "lib/net6.0-windows7.0/Microsoft.Msagl.WpfGraphControl.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Microsoft.Msagl.WpfGraphControl.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "PDFsharp-WPF/6.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.Extensions.Logging.Abstractions": "8.0.3",
+          "System.Security.Cryptography.Pkcs": "8.0.1"
+        },
+        "compile": {
+          "lib/net8.0-windows7.0/PdfSharp-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Cryptography.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Shared.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Snippets-wpf.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.System.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.WPFonts.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/PdfSharp-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Cryptography.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Shared.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.Snippets-wpf.dll": {
+            "related": ".pdb"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.System.dll": {
+            "related": ".pdb;.xml"
+          },
+          "lib/net8.0-windows7.0/PdfSharp.WPFonts.dll": {
+            "related": ".pdb;.xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WPF"
+        ]
+      },
+      "RBush.Signed/4.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/RBush.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "SixLabors.Fonts/1.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/netcoreapp3.1/SixLabors.Fonts.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "System.IO.Packaging/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net8.0/System.IO.Packaging.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      },
+      "System.Security.Cryptography.Pkcs/8.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll": {
+            "related": ".xml"
+          }
+        },
+        "build": {
+          "buildTransitive/net6.0/_._": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ClosedXML/0.105.1": {
+      "sha512": "X1ruIP9h2FBEK7jmO0peq3s6/Zqt5ve5a9f9kn6WUjdsUWvGbQlqxuGLz822xuFLlmnSeAfWFTGeX/tZlmAt+g==",
+      "type": "package",
+      "path": "closedxml/0.105.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "closedxml.0.105.1.nupkg.sha512",
+        "closedxml.nuspec",
+        "lib/netstandard2.0/ClosedXML.dll",
+        "lib/netstandard2.0/ClosedXML.pdb",
+        "lib/netstandard2.0/ClosedXML.xml",
+        "lib/netstandard2.1/ClosedXML.dll",
+        "lib/netstandard2.1/ClosedXML.pdb",
+        "lib/netstandard2.1/ClosedXML.xml",
+        "nuget-logo.png"
+      ]
+    },
+    "ClosedXML.Parser/2.0.0": {
+      "sha512": "ngTqjYreDYNytG1W5d3ewHsw0ukmmrgV7EKnS4/40rXoYZGt07jrBvo+N+GxT49rcageUMUiprV0jYT4nwVBHQ==",
+      "type": "package",
+      "path": "closedxml.parser/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "closedxml.parser.2.0.0.nupkg.sha512",
+        "closedxml.parser.nuspec",
+        "lib/netstandard2.0/ClosedXML.Parser.dll",
+        "lib/netstandard2.0/ClosedXML.Parser.xml",
+        "lib/netstandard2.1/ClosedXML.Parser.dll",
+        "lib/netstandard2.1/ClosedXML.Parser.xml"
+      ]
+    },
+    "DocumentFormat.OpenXml/3.5.1": {
+      "sha512": "zxdOf5VVCe/uNklbRhj8dVBzQGj3DoqkUuqOp9cAZVuN8mNYDjof1lvSQA2OQNr8Ptc9d7pbA7Azq/ReaI3FpA==",
+      "type": "package",
+      "path": "documentformat.openxml/3.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "documentformat.openxml.3.5.1.nupkg.sha512",
+        "documentformat.openxml.nuspec",
+        "icon.png",
+        "lib/net10.0/DocumentFormat.OpenXml.dll",
+        "lib/net10.0/DocumentFormat.OpenXml.xml",
+        "lib/net35/DocumentFormat.OpenXml.dll",
+        "lib/net35/DocumentFormat.OpenXml.xml",
+        "lib/net40/DocumentFormat.OpenXml.dll",
+        "lib/net40/DocumentFormat.OpenXml.xml",
+        "lib/net46/DocumentFormat.OpenXml.dll",
+        "lib/net46/DocumentFormat.OpenXml.xml",
+        "lib/net8.0/DocumentFormat.OpenXml.dll",
+        "lib/net8.0/DocumentFormat.OpenXml.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.xml"
+      ]
+    },
+    "DocumentFormat.OpenXml.Framework/3.5.1": {
+      "sha512": "U5txtc3ORno73xQx9Lf2gWzfaSZnZwKHfLkTAslhlew9lxe5XbUiCt0dY1fHeAf8yRqszUAe5i/+xLC9R/Xfsw==",
+      "type": "package",
+      "path": "documentformat.openxml.framework/3.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "documentformat.openxml.framework.3.5.1.nupkg.sha512",
+        "documentformat.openxml.framework.nuspec",
+        "icon.png",
+        "lib/net10.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net10.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net35/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net35/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net40/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net40/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net46/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net46/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net6.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net6.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/net8.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/net8.0/DocumentFormat.OpenXml.Framework.xml",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.dll",
+        "lib/netstandard2.0/DocumentFormat.OpenXml.Framework.xml"
+      ]
+    },
+    "ExcelNumberFormat/1.1.0": {
+      "sha512": "R3BVHPs9O+RkExbZYTGT0+9HLbi8ZrNij1Yziyw6znd3J7P3uoIR07uwTLGOogtz1p6+0sna66eBoXu7tBiVQA==",
+      "type": "package",
+      "path": "excelnumberformat/1.1.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "excelnumberformat.1.1.0.nupkg.sha512",
+        "excelnumberformat.nuspec",
+        "icon.png",
+        "lib/net20/ExcelNumberFormat.dll",
+        "lib/net20/ExcelNumberFormat.xml",
+        "lib/netstandard1.0/ExcelNumberFormat.dll",
+        "lib/netstandard1.0/ExcelNumberFormat.xml",
+        "lib/netstandard2.0/ExcelNumberFormat.dll",
+        "lib/netstandard2.0/ExcelNumberFormat.xml"
+      ]
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.2": {
+      "sha512": "3iE7UF7MQkCv1cxzCahz+Y/guQbTqieyxyaWKhrRO91itI9cOKO76OHeQDahqG4MmW5umr3CcCvGmK92lWNlbg==",
+      "type": "package",
+      "path": "microsoft.extensions.dependencyinjection.abstractions/8.0.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+        "lib/netstandard2.1/Microsoft.Extensions.DependencyInjection.Abstractions.xml",
+        "microsoft.extensions.dependencyinjection.abstractions.8.0.2.nupkg.sha512",
+        "microsoft.extensions.dependencyinjection.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Extensions.Logging.Abstractions/8.0.3": {
+      "sha512": "dL0QGToTxggRLMYY4ZYX5AMwBb+byQBd/5dMiZE07Nv73o6I5Are3C7eQTh7K2+A4ct0PVISSr7TZANbiNb2yQ==",
+      "type": "package",
+      "path": "microsoft.extensions.logging.abstractions/8.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "PACKAGE.md",
+        "THIRD-PARTY-NOTICES.TXT",
+        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net462/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net6.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net7.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/net8.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.dll",
+        "lib/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.xml",
+        "microsoft.extensions.logging.abstractions.8.0.3.nupkg.sha512",
+        "microsoft.extensions.logging.abstractions.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "Microsoft.Msagl/1.1.6": {
+      "sha512": "Fqxj+pmZEo/H2z/LEMFSmtt6GrSj2FKZfz15HhTQRhYRpdewFaC5mPIUxkzELJTac/hbUDb28QBjG/w0JbG2wg==",
+      "type": "package",
+      "path": "microsoft.msagl/1.1.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Msagl.dll",
+        "lib/netstandard2.0/Microsoft.Msagl.xml",
+        "microsoft.msagl.1.1.6.nupkg.sha512",
+        "microsoft.msagl.nuspec"
+      ]
+    },
+    "Msagl/1.2.1": {
+      "sha512": "IlKyVvu9DCcc/xDAW2yw9N1i3xMzaogrL7oa4dE8/IFH3pt0loQo4O2TUKKeAvPgAKgNz45YSyD2/8qdTj8l6Q==",
+      "type": "package",
+      "path": "msagl/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Msagl.dll",
+        "lib/netstandard2.0/Microsoft.Msagl.xml",
+        "msagl.1.2.1.nupkg.sha512",
+        "msagl.nuspec"
+      ]
+    },
+    "Msagl.Drawing/1.2.1": {
+      "sha512": "sC5p15ONzHRY+p7CkJ9cZz511wheUjnjMz/gzMkfLR4Yhyiybx1zZL2ruc0aBvaTeqIbtorWjKEy2OD4ARTPXQ==",
+      "type": "package",
+      "path": "msagl.drawing/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/Microsoft.Msagl.Drawing.dll",
+        "lib/netstandard2.0/Microsoft.Msagl.Drawing.xml",
+        "msagl.drawing.1.2.1.nupkg.sha512",
+        "msagl.drawing.nuspec"
+      ]
+    },
+    "Msagl.WpfGraphControl/1.2.1": {
+      "sha512": "kPHi5HNvn/DumtC8/ygAxWG6EsZICgLcgr4IMavN2cPx/3W6NLD8NMaHMWDVEOraOFhB8r82j6dBk11Q5liXUw==",
+      "type": "package",
+      "path": "msagl.wpfgraphcontrol/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net472/Microsoft.Msagl.WpfGraphControl.dll",
+        "lib/net6.0-windows7.0/Microsoft.Msagl.WpfGraphControl.dll",
+        "msagl.wpfgraphcontrol.1.2.1.nupkg.sha512",
+        "msagl.wpfgraphcontrol.nuspec"
+      ]
+    },
+    "PDFsharp-WPF/6.2.4": {
+      "sha512": "wD2byoUNGc/IDmSSSPLGGCNMXf4TybnjKlcYa40nuWIYLVA4DSvnCvWr7HbsBEwFvAYRP6DceQ4MN35COD/pdw==",
+      "type": "package",
+      "path": "pdfsharp-wpf/6.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "images/PDFsharp-128x128.png",
+        "lib/net10.0-windows7.0/PdfSharp-wpf.dll",
+        "lib/net10.0-windows7.0/PdfSharp-wpf.pdb",
+        "lib/net10.0-windows7.0/PdfSharp-wpf.xml",
+        "lib/net10.0-windows7.0/PdfSharp.BarCodes-wpf.dll",
+        "lib/net10.0-windows7.0/PdfSharp.BarCodes-wpf.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.BarCodes-wpf.xml",
+        "lib/net10.0-windows7.0/PdfSharp.Charting-wpf.dll",
+        "lib/net10.0-windows7.0/PdfSharp.Charting-wpf.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.Charting-wpf.xml",
+        "lib/net10.0-windows7.0/PdfSharp.Cryptography.dll",
+        "lib/net10.0-windows7.0/PdfSharp.Cryptography.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.Cryptography.xml",
+        "lib/net10.0-windows7.0/PdfSharp.Quality-wpf.dll",
+        "lib/net10.0-windows7.0/PdfSharp.Quality-wpf.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.Quality-wpf.xml",
+        "lib/net10.0-windows7.0/PdfSharp.Shared.dll",
+        "lib/net10.0-windows7.0/PdfSharp.Shared.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.Shared.xml",
+        "lib/net10.0-windows7.0/PdfSharp.Snippets-wpf.dll",
+        "lib/net10.0-windows7.0/PdfSharp.Snippets-wpf.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.System.dll",
+        "lib/net10.0-windows7.0/PdfSharp.System.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.System.xml",
+        "lib/net10.0-windows7.0/PdfSharp.WPFonts.dll",
+        "lib/net10.0-windows7.0/PdfSharp.WPFonts.pdb",
+        "lib/net10.0-windows7.0/PdfSharp.WPFonts.xml",
+        "lib/net462/PdfSharp-wpf.dll",
+        "lib/net462/PdfSharp-wpf.pdb",
+        "lib/net462/PdfSharp-wpf.xml",
+        "lib/net462/PdfSharp.BarCodes-wpf.dll",
+        "lib/net462/PdfSharp.BarCodes-wpf.pdb",
+        "lib/net462/PdfSharp.BarCodes-wpf.xml",
+        "lib/net462/PdfSharp.Charting-wpf.dll",
+        "lib/net462/PdfSharp.Charting-wpf.pdb",
+        "lib/net462/PdfSharp.Charting-wpf.xml",
+        "lib/net462/PdfSharp.Cryptography.dll",
+        "lib/net462/PdfSharp.Cryptography.pdb",
+        "lib/net462/PdfSharp.Cryptography.xml",
+        "lib/net462/PdfSharp.Quality-wpf.dll",
+        "lib/net462/PdfSharp.Quality-wpf.pdb",
+        "lib/net462/PdfSharp.Quality-wpf.xml",
+        "lib/net462/PdfSharp.Shared.dll",
+        "lib/net462/PdfSharp.Shared.pdb",
+        "lib/net462/PdfSharp.Shared.xml",
+        "lib/net462/PdfSharp.Snippets-wpf.dll",
+        "lib/net462/PdfSharp.Snippets-wpf.pdb",
+        "lib/net462/PdfSharp.System.dll",
+        "lib/net462/PdfSharp.System.pdb",
+        "lib/net462/PdfSharp.System.xml",
+        "lib/net462/PdfSharp.WPFonts.dll",
+        "lib/net462/PdfSharp.WPFonts.pdb",
+        "lib/net462/PdfSharp.WPFonts.xml",
+        "lib/net8.0-windows7.0/PdfSharp-wpf.dll",
+        "lib/net8.0-windows7.0/PdfSharp-wpf.pdb",
+        "lib/net8.0-windows7.0/PdfSharp-wpf.xml",
+        "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.dll",
+        "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.BarCodes-wpf.xml",
+        "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.dll",
+        "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.Charting-wpf.xml",
+        "lib/net8.0-windows7.0/PdfSharp.Cryptography.dll",
+        "lib/net8.0-windows7.0/PdfSharp.Cryptography.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.Cryptography.xml",
+        "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.dll",
+        "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.Quality-wpf.xml",
+        "lib/net8.0-windows7.0/PdfSharp.Shared.dll",
+        "lib/net8.0-windows7.0/PdfSharp.Shared.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.Shared.xml",
+        "lib/net8.0-windows7.0/PdfSharp.Snippets-wpf.dll",
+        "lib/net8.0-windows7.0/PdfSharp.Snippets-wpf.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.System.dll",
+        "lib/net8.0-windows7.0/PdfSharp.System.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.System.xml",
+        "lib/net8.0-windows7.0/PdfSharp.WPFonts.dll",
+        "lib/net8.0-windows7.0/PdfSharp.WPFonts.pdb",
+        "lib/net8.0-windows7.0/PdfSharp.WPFonts.xml",
+        "lib/net9.0-windows7.0/PdfSharp-wpf.dll",
+        "lib/net9.0-windows7.0/PdfSharp-wpf.pdb",
+        "lib/net9.0-windows7.0/PdfSharp-wpf.xml",
+        "lib/net9.0-windows7.0/PdfSharp.BarCodes-wpf.dll",
+        "lib/net9.0-windows7.0/PdfSharp.BarCodes-wpf.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.BarCodes-wpf.xml",
+        "lib/net9.0-windows7.0/PdfSharp.Charting-wpf.dll",
+        "lib/net9.0-windows7.0/PdfSharp.Charting-wpf.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.Charting-wpf.xml",
+        "lib/net9.0-windows7.0/PdfSharp.Cryptography.dll",
+        "lib/net9.0-windows7.0/PdfSharp.Cryptography.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.Cryptography.xml",
+        "lib/net9.0-windows7.0/PdfSharp.Quality-wpf.dll",
+        "lib/net9.0-windows7.0/PdfSharp.Quality-wpf.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.Quality-wpf.xml",
+        "lib/net9.0-windows7.0/PdfSharp.Shared.dll",
+        "lib/net9.0-windows7.0/PdfSharp.Shared.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.Shared.xml",
+        "lib/net9.0-windows7.0/PdfSharp.Snippets-wpf.dll",
+        "lib/net9.0-windows7.0/PdfSharp.Snippets-wpf.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.System.dll",
+        "lib/net9.0-windows7.0/PdfSharp.System.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.System.xml",
+        "lib/net9.0-windows7.0/PdfSharp.WPFonts.dll",
+        "lib/net9.0-windows7.0/PdfSharp.WPFonts.pdb",
+        "lib/net9.0-windows7.0/PdfSharp.WPFonts.xml",
+        "pdfsharp-wpf.6.2.4.nupkg.sha512",
+        "pdfsharp-wpf.nuspec"
+      ]
+    },
+    "RBush.Signed/4.0.0": {
+      "sha512": "aP5KQxL5RnFNGW1f0euYVBfCatkLw5iEzMRJcXKq8LWWP4Cp3+qoSq1tDDL2vvJ2rM0ychmVMa2VaEKLS6uX4w==",
+      "type": "package",
+      "path": "rbush.signed/4.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net47/RBush.dll",
+        "lib/net47/RBush.xml",
+        "lib/net8.0/RBush.dll",
+        "lib/net8.0/RBush.xml",
+        "lib/netstandard2.0/RBush.dll",
+        "lib/netstandard2.0/RBush.xml",
+        "rbush.signed.4.0.0.nupkg.sha512",
+        "rbush.signed.nuspec",
+        "readme.md"
+      ]
+    },
+    "SixLabors.Fonts/1.0.0": {
+      "sha512": "LFQsCZlV0xlUyXAOMUo5kkSl+8zAQXXbbdwWchtk0B4o7zotZhQsQOcJUELGHdfPfm/xDAsz6hONAuV25bJaAg==",
+      "type": "package",
+      "path": "sixlabors.fonts/1.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netcoreapp3.1/SixLabors.Fonts.dll",
+        "lib/netcoreapp3.1/SixLabors.Fonts.xml",
+        "lib/netstandard2.0/SixLabors.Fonts.dll",
+        "lib/netstandard2.0/SixLabors.Fonts.xml",
+        "lib/netstandard2.1/SixLabors.Fonts.dll",
+        "lib/netstandard2.1/SixLabors.Fonts.xml",
+        "sixlabors.fonts.1.0.0.nupkg.sha512",
+        "sixlabors.fonts.128.png",
+        "sixlabors.fonts.nuspec"
+      ]
+    },
+    "System.IO.Packaging/8.0.1": {
+      "sha512": "KYkIOAvPexQOLDxPO2g0BVoWInnQhPpkFzRqvNrNrMhVT6kqhVr0zEb6KCHlptLFukxnZrjuMVAnxK7pOGUYrw==",
+      "type": "package",
+      "path": "system.io.packaging/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.IO.Packaging.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.IO.Packaging.targets",
+        "lib/net462/System.IO.Packaging.dll",
+        "lib/net462/System.IO.Packaging.xml",
+        "lib/net6.0/System.IO.Packaging.dll",
+        "lib/net6.0/System.IO.Packaging.xml",
+        "lib/net7.0/System.IO.Packaging.dll",
+        "lib/net7.0/System.IO.Packaging.xml",
+        "lib/net8.0/System.IO.Packaging.dll",
+        "lib/net8.0/System.IO.Packaging.xml",
+        "lib/netstandard2.0/System.IO.Packaging.dll",
+        "lib/netstandard2.0/System.IO.Packaging.xml",
+        "system.io.packaging.8.0.1.nupkg.sha512",
+        "system.io.packaging.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    },
+    "System.Security.Cryptography.Pkcs/8.0.1": {
+      "sha512": "CoCRHFym33aUSf/NtWSVSZa99dkd0Hm7OCZUxORBjRB16LNhIEOf8THPqzIYlvKM0nNDAPTRBa1FxEECrgaxxA==",
+      "type": "package",
+      "path": "system.security.cryptography.pkcs/8.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "buildTransitive/net461/System.Security.Cryptography.Pkcs.targets",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net6.0/_._",
+        "buildTransitive/netcoreapp2.0/System.Security.Cryptography.Pkcs.targets",
+        "lib/net462/System.Security.Cryptography.Pkcs.dll",
+        "lib/net462/System.Security.Cryptography.Pkcs.xml",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.0/System.Security.Cryptography.Pkcs.xml",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.dll",
+        "lib/netstandard2.1/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net6.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net7.0/System.Security.Cryptography.Pkcs.xml",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.dll",
+        "runtimes/win/lib/net8.0/System.Security.Cryptography.Pkcs.xml",
+        "system.security.cryptography.pkcs.8.0.1.nupkg.sha512",
+        "system.security.cryptography.pkcs.nuspec",
+        "useSharedDesignerContext.txt"
+      ]
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net8.0-windows": [
+      "ClosedXML >= 0.105.1",
+      "DocumentFormat.OpenXml >= 3.5.1",
+      "Microsoft.Msagl >= 1.1.6",
+      "Msagl.WpfGraphControl >= 1.2.1",
+      "PDFsharp-WPF >= 6.2.4"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\rnfkd\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\rnfkd\\Desktop\\CSG\\project\\ESDP_ver.G\\ESDP.csproj",
+      "projectName": "ESDP",
+      "projectPath": "C:\\Users\\rnfkd\\Desktop\\CSG\\project\\ESDP_ver.G\\ESDP.csproj",
+      "packagesPath": "C:\\Users\\rnfkd\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\rnfkd\\Desktop\\CSG\\project\\ESDP_ver.G\\obj\\publish\\win-x86\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\rnfkd\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net8.0-windows"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net8.0-windows": {
+          "framework": "net8.0-windows7.0",
+          "targetAlias": "net8.0-windows",
+          "projectReferences": {}
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "10.0.300"
+    },
+    "frameworks": {
+      "net8.0-windows": {
+        "framework": "net8.0-windows7.0",
+        "targetAlias": "net8.0-windows",
+        "dependencies": {
+          "ClosedXML": {
+            "target": "Package",
+            "version": "[0.105.1, )"
+          },
+          "DocumentFormat.OpenXml": {
+            "target": "Package",
+            "version": "[3.5.1, )"
+          },
+          "Microsoft.Msagl": {
+            "target": "Package",
+            "version": "[1.1.6, )"
+          },
+          "Msagl.WpfGraphControl": {
+            "target": "Package",
+            "version": "[1.2.1, )"
+          },
+          "PDFsharp-WPF": {
+            "target": "Package",
+            "version": "[6.2.4, )"
+          }
+        },
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48",
+          "net481"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "frameworkReferences": {
+          "Microsoft.NETCore.App": {
+            "privateAssets": "all"
+          },
+          "Microsoft.WindowsDesktop.App.WPF": {
+            "privateAssets": "none"
+          }
+        },
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.302/PortableRuntimeIdentifierGraph.json"
+      }
+    },
+    "runtimes": {
+      "win-x86": {
+        "#import": []
+      }
+    }
+  }
+}

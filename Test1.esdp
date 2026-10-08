@@ -1,0 +1,2875 @@
+{
+  "Name": "\uC0C8 \uD504\uB85C\uC81D\uD2B8",
+  "Devices": [
+    {
+      "Id": "e67234d2-caab-4ed1-a258-e9cfb0b6bd03",
+      "Name": "DDDDD",
+      "NameRtfBase64": "",
+      "Kind": "\uC8FC\uC7A5\uCE58",
+      "Ports": [
+        {
+          "Id": "81853df5-250c-4939-8534-528243f04373",
+          "Designator": "1",
+          "Side": "Left",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": -1
+        },
+        {
+          "Id": "2331f879-c6df-46d0-a16c-9bb494ab91c2",
+          "Designator": "2",
+          "Side": "Top",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": -1
+        },
+        {
+          "Id": "65c7f97b-847c-40e8-aaeb-bb53e4c84315",
+          "Designator": "3",
+          "Side": "Bottom",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": 0.5276398185421417
+        },
+        {
+          "Id": "6e61e194-8e33-411e-8091-093581f4b9c6",
+          "Designator": "4",
+          "Side": "Right",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": -1
+        }
+      ],
+      "Features": {},
+      "NameBold": true,
+      "NameItalic": false,
+      "NameUnderline": false,
+      "NameFontSize": 10,
+      "NameColorHex": "#000000",
+      "NameFontFamily": "\uB9D1\uC740 \uACE0\uB515",
+      "NameTextAlignment": "Center",
+      "BackgroundColorHex": "#FFFFFF"
+    },
+    {
+      "Id": "a25a7dbc-5371-4cd8-93c4-0c13855acb71",
+      "Name": "qqqqq",
+      "NameRtfBase64": "",
+      "Kind": "\uCC29\uD654\uB958",
+      "Ports": [
+        {
+          "Id": "cd2a206e-7177-4d96-9dfb-881e59237d10",
+          "Designator": "1",
+          "Side": "Top",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": 0.4751982316306327
+        },
+        {
+          "Id": "05865572-1c04-4547-9ae6-e089731021f9",
+          "Designator": "2",
+          "Side": "Right",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": 0.5
+        },
+        {
+          "Id": "232316f2-fee9-4493-b004-abd6d115d12a",
+          "Designator": "3",
+          "Side": "Left",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": -1
+        }
+      ],
+      "Features": {},
+      "NameBold": true,
+      "NameItalic": false,
+      "NameUnderline": false,
+      "NameFontSize": 10,
+      "NameColorHex": "#000000",
+      "NameFontFamily": "\uB9D1\uC740 \uACE0\uB515",
+      "NameTextAlignment": "Center",
+      "BackgroundColorHex": "#FFFFFF"
+    },
+    {
+      "Id": "d1dba6d5-d3e9-49c6-8ff8-8a92cf71b52a",
+      "Name": "test",
+      "NameRtfBase64": "",
+      "Kind": "\uC8FC\uC7A5\uCE58",
+      "Ports": [
+        {
+          "Id": "8e9c4788-7310-4628-8f58-69c4977606a9",
+          "Designator": "P102",
+          "Side": "Left",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": 0.1317711601362968
+        },
+        {
+          "Id": "b78dc7d4-bb5f-4b8c-a491-87341f43797b",
+          "Designator": "J102",
+          "Side": "Left",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": 0.7756473765479891
+        }
+      ],
+      "Features": {},
+      "NameBold": true,
+      "NameItalic": false,
+      "NameUnderline": false,
+      "NameFontSize": 10,
+      "NameColorHex": "#000000",
+      "NameFontFamily": "\uB9D1\uC740 \uACE0\uB515",
+      "NameTextAlignment": "Center",
+      "BackgroundColorHex": "#FFFFFF"
+    },
+    {
+      "Id": "dba2dd67-2407-4984-8c5f-d512cf53a49f",
+      "Name": "eeeeeeeeee",
+      "NameRtfBase64": "",
+      "Kind": "\uAE30\uD0C0",
+      "Ports": [
+        {
+          "Id": "cafdb6b1-3ff2-473b-a882-eed33b711bda",
+          "Designator": "11111",
+          "Side": "Left",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": 0.3284615384615379
+        },
+        {
+          "Id": "0202fc7d-5155-4e78-aea6-c9b132d79804",
+          "Designator": "222222",
+          "Side": "Right",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": -1
+        },
+        {
+          "Id": "a7da67b8-291b-449f-b76d-73c606eb2178",
+          "Designator": "333333",
+          "Side": "Left",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 11,
+          "LabelColorHex": "#7F7F7F",
+          "HasCustomLabelPosition": false,
+          "LabelOffsetX": 0,
+          "LabelOffsetY": 0,
+          "Position": -1
+        }
+      ],
+      "Features": {},
+      "NameBold": true,
+      "NameItalic": false,
+      "NameUnderline": false,
+      "NameFontSize": 10,
+      "NameColorHex": "#000000",
+      "NameFontFamily": "\uB9D1\uC740 \uACE0\uB515",
+      "NameTextAlignment": "Center",
+      "BackgroundColorHex": "#158F52"
+    }
+  ],
+  "Cables": [
+    {
+      "Id": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+      "Name": "1111111",
+      "Category": "\uD0C4\uB0B4\uCF00\uC774\uBE14",
+      "LineColorHex": "#000000",
+      "Connectors": [
+        {
+          "Id": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+          "PortName": "P1",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "1",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "4",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "1",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "4",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        },
+        {
+          "Id": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+          "PortName": "P2",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "1",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "4",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "1",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "4",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        },
+        {
+          "Id": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+          "PortName": "P3",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "1",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "4",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "1",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "4",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        }
+      ],
+      "OverallBraid": true,
+      "Tube": true,
+      "SignalRows": [
+        {
+          "Id": "a523ea7e-9b24-477d-b343-a0baaee99526",
+          "ParentSignalId": "",
+          "PinName": "1",
+          "WireType": "TWP",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "ba8a1e44-3b90-40b3-a836-2a2103ce809c",
+          "ParentSignalId": "",
+          "PinName": "3",
+          "WireType": "TWP",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "074eba55-ba6a-421e-a901-d5695d2f9208",
+          "ParentSignalId": "",
+          "PinName": "2",
+          "WireType": "TWP",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "602e4033-9184-4a97-a99a-58632f9f0683",
+          "ParentSignalId": "",
+          "PinName": "4",
+          "WireType": "TWP",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "ad307ff9-8c63-4ee8-a010-cc753054e956",
+          "ParentSignalId": "",
+          "PinName": "1",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "0b8e6f4b-89ea-4ffe-9ac0-c9ad895e7a62",
+          "ParentSignalId": "",
+          "PinName": "3",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "22347515-6442-436a-9f44-26eb1df92519",
+          "ParentSignalId": "",
+          "PinName": "2",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "9f7cbbab-5498-40e4-9a78-3276eaa293ec",
+          "ParentSignalId": "",
+          "PinName": "4",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "123926fa-cfa6-4119-87ec-e9b396aaaf85",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "6fa29010-05a8-4697-a07c-b0ef556acb03",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "0f55b4bf-5a22-4db7-b347-b5e37605f1f7",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "17cdc446-e986-4872-8a32-682bf1cd7b4a",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "443c6c0b-2492-4dec-b683-3f7efb5bf07d": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "8a0104d1-bb9f-45ca-b292-2fc8750b8206": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        }
+      ]
+    },
+    {
+      "Id": "5395ad14-a615-4ff2-a7e9-c8c02a97f5b1",
+      "Name": "ddddddddd",
+      "Category": "\uC810\uAC80\uCF00\uC774\uBE14",
+      "LineColorHex": "#000000",
+      "Connectors": [
+        {
+          "Id": "5460e039-3ec4-4471-ad5b-d492ba964456",
+          "PortName": "P1",
+          "ConnType": "",
+          "Description": "1111",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "q",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "r",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s4"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s4"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s6"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s6"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s7"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s7"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "c7"
+            }
+          ]
+        },
+        {
+          "Id": "047b91c1-0d10-4095-b784-dd6dc5e21b4a",
+          "PortName": "P2",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "q",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "r",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "c2"
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        },
+        {
+          "Id": "e549c701-86c5-47b3-aebb-1e7b0704fe76",
+          "PortName": "P3",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "q",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "r",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        },
+        {
+          "Id": "3956db41-23f6-4a24-ac35-cd6610c378b6",
+          "PortName": "P4",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "q",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "r",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        },
+        {
+          "Id": "b8b5c133-a030-4411-89f2-3d65c493e62b",
+          "PortName": "P5",
+          "ConnType": "",
+          "Description": "",
+          "ShowConnType": false,
+          "LabelFontSize": 9,
+          "LabelColorHex": "#000000",
+          "KeyAngle": "",
+          "Pins": [
+            {
+              "PinNum": "",
+              "PinName": "q",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "2",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "3",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "r",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          ]
+        }
+      ],
+      "OverallBraid": true,
+      "Tube": true,
+      "SignalRows": [
+        {
+          "Id": "685aaa05-3703-446f-bbe4-e9abdc031387",
+          "ParentSignalId": "",
+          "PinName": "q",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "8ecedbe9-8fa8-4780-a52b-00fa71f732b7",
+          "ParentSignalId": "",
+          "PinName": "2",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s1"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "c37bffd4-a55c-4fa5-a38f-1388c5868b7c",
+          "ParentSignalId": "",
+          "PinName": "3",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "d02864c7-4b52-4d39-9d93-6ad7beea76fe",
+          "ParentSignalId": "",
+          "PinName": "r",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "66369c91-bd08-4e51-9edb-dd01644a7213",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "d5e21c62-b368-4143-99c5-14577d4bfda8",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "0cba568a-8951-4246-9f4b-a814056f4a9a",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s4"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s2"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "39337ffa-3984-422a-9bd4-635b6f287a7a",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s4"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "c2"
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "5df48556-64e6-4439-83ba-7c7abc07f199",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s6"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "b2b2c170-fa12-42eb-9678-8142afea4eeb",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s6"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "0b757431-449f-446b-8b69-06b79914808f",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s7"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "eb063c9c-7552-4680-9058-b83948876020",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "s7"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        },
+        {
+          "Id": "0f0fcf2b-5ecc-4633-9fa2-2442d898f017",
+          "ParentSignalId": "",
+          "PinName": "",
+          "WireType": "",
+          "PortPins": {
+            "5460e039-3ec4-4471-ad5b-d492ba964456": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": "c7"
+            },
+            "047b91c1-0d10-4095-b784-dd6dc5e21b4a": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "e549c701-86c5-47b3-aebb-1e7b0704fe76": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "3956db41-23f6-4a24-ac35-cd6610c378b6": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            },
+            "b8b5c133-a030-4411-89f2-3d65c493e62b": {
+              "PinNum": "",
+              "PinName": "",
+              "PinType": "",
+              "InConn": "",
+              "TwpShield": ""
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "Sheets": [
+    {
+      "Id": "1afd3a1b-bcee-45bd-b427-23aea917b786",
+      "Name": "Sheet1",
+      "PaperSize": "A3_Landscape",
+      "KeepPaperAspectRatio": false,
+      "PageScale": 1,
+      "LeadingPageColumns": 0,
+      "LeadingPageRows": 0,
+      "Zones": [],
+      "DeviceInstances": [
+        {
+          "Id": "5dbb410d-f5f3-43ff-b5f5-ed44e49efc77",
+          "DeviceId": "e67234d2-caab-4ed1-a258-e9cfb0b6bd03",
+          "X": 271.41768249740755,
+          "Y": 128.98803283339964,
+          "Width": 90,
+          "Height": 55,
+          "ZoneId": null,
+          "Override": null
+        },
+        {
+          "Id": "03054559-cbee-4f4f-b328-0d46d42affcc",
+          "DeviceId": "a25a7dbc-5371-4cd8-93c4-0c13855acb71",
+          "X": 1024.4553423035763,
+          "Y": 273.11333333333334,
+          "Width": 90,
+          "Height": 60,
+          "ZoneId": null,
+          "Override": null
+        },
+        {
+          "Id": "7b5f00e5-18e9-4663-8038-46d582d135df",
+          "DeviceId": "d1dba6d5-d3e9-49c6-8ff8-8a92cf71b52a",
+          "X": 711.9727507607942,
+          "Y": 447.8345331608291,
+          "Width": 90,
+          "Height": 60,
+          "ZoneId": null,
+          "Override": null
+        },
+        {
+          "Id": "279aa581-9092-407c-9bb3-0dcd79d115db",
+          "DeviceId": "a25a7dbc-5371-4cd8-93c4-0c13855acb71",
+          "X": 342.9999999999999,
+          "Y": 457.54851944054724,
+          "Width": 90,
+          "Height": 60,
+          "ZoneId": null,
+          "Override": null
+        },
+        {
+          "Id": "41f52c11-b94d-410d-bc7e-e74901512afd",
+          "DeviceId": "d1dba6d5-d3e9-49c6-8ff8-8a92cf71b52a",
+          "X": 816.6666666666666,
+          "Y": 596.3733333333332,
+          "Width": 90,
+          "Height": 60,
+          "ZoneId": null,
+          "Override": null
+        },
+        {
+          "Id": "b3af22a6-8a47-470d-972b-081c13edb0e9",
+          "DeviceId": "dba2dd67-2407-4984-8c5f-d512cf53a49f",
+          "X": 988.6666666666666,
+          "Y": 467.11333333333334,
+          "Width": 98.66666666666686,
+          "Height": 60.66666666666663,
+          "ZoneId": null,
+          "Override": null
+        }
+      ],
+      "CableInstances": [
+        {
+          "Id": "995ce0f4-e9dc-4c17-9540-19c8552e7c78",
+          "CableId": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+          "PortA": {
+            "ConnectorId": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+            "PortX": 368.91768249740755,
+            "PortY": 156.48803283339964,
+            "ConnectedToPortKey": "dev:5dbb410d-f5f3-43ff-b5f5-ed44e49efc77:6e61e194-8e33-411e-8091-093581f4b9c6",
+            "FixedFacing": "Right",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "PortB": {
+            "ConnectorId": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "PortX": 704.4727507607942,
+            "PortY": 455.7408027690069,
+            "ConnectedToPortKey": "dev:7b5f00e5-18e9-4663-8038-46d582d135df:8e9c4788-7310-4628-8f58-69c4977606a9",
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "RootBends": [
+            {
+              "X": 692.9727507607942,
+              "Y": 156.48803283339964
+            },
+            {
+              "X": 692.9727507607942,
+              "Y": 455.7408027690069
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "72885ce1-bcc9-41f5-996a-a9ba620ce15d",
+              "ParentId": "root",
+              "T": 0.5,
+              "Port": {
+                "ConnectorId": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+                "PortX": 686.3216015969044,
+                "PortY": 256.48803283339964,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "03501ed0-0975-4413-8f01-9a0449298f1d",
+          "CableId": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+          "PortA": {
+            "ConnectorId": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+            "PortX": 385.7678408467568,
+            "PortY": 450.04851944054724,
+            "ConnectedToPortKey": "dev:279aa581-9092-407c-9bb3-0dcd79d115db:cd2a206e-7177-4d96-9dfb-881e59237d10",
+            "FixedFacing": "Top",
+            "HasCustomLabelPosition": false,
+            "LabelDX": -9.106846071534221,
+            "LabelDY": 0.4139475487061759
+          },
+          "PortB": {
+            "ConnectorId": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "PortX": 1016.9553423035763,
+            "PortY": 303.11333333333334,
+            "ConnectedToPortKey": "dev:03054559-cbee-4f4f-b328-0d46d42affcc:232316f2-fee9-4493-b004-abd6d115d12a",
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": false,
+            "LabelDX": -6.741286451346915,
+            "LabelDY": 17.73966636527083
+          },
+          "RootBends": [
+            {
+              "X": 385.7678408467568,
+              "Y": 383.6449473543389
+            },
+            {
+              "X": 1012.9553423035763,
+              "Y": 383.6449473543389
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "970f4040-c3d7-45d2-946b-392c9cc34470",
+              "ParentId": "root",
+              "T": 0.5,
+              "Port": {
+                "ConnectorId": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+                "PortX": 708.4256125425652,
+                "PortY": 483.6449473543389,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": -58.36660436756051,
+          "NameLabelDY": -4.13947548706102,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "85c52dcd-4d87-401a-8407-bbe33a99f97b",
+          "CableId": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+          "PortA": {
+            "ConnectorId": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+            "PortX": 318.9052661662003,
+            "PortY": 191.48803283339964,
+            "ConnectedToPortKey": "dev:5dbb410d-f5f3-43ff-b5f5-ed44e49efc77:65c7f97b-847c-40e8-aaeb-bb53e4c84315",
+            "FixedFacing": "Bottom",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "PortB": {
+            "ConnectorId": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "PortX": 494.33333333333337,
+            "PortY": 471.7066666666666,
+            "ConnectedToPortKey": null,
+            "FixedFacing": "Right",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "RootBends": [
+            {
+              "X": 318.9052661662003,
+              "Y": 202.98803283339964
+            },
+            {
+              "X": 609.8921977096282,
+              "Y": 202.98803283339964
+            },
+            {
+              "X": 609.8921977096282,
+              "Y": 471.7066666666666
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "834adf08-ded7-455a-8900-27713662bfc3",
+              "ParentId": "root",
+              "T": 0.5,
+              "Port": {
+                "ConnectorId": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+                "PortX": 709.8921977096282,
+                "PortY": 243.8833161664666,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Left",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "656fc3cb-7c10-4afd-9253-be9ebcce7878",
+          "CableId": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+          "PortA": {
+            "ConnectorId": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+            "PortX": 486.83333333333337,
+            "PortY": 471.7066666666666,
+            "ConnectedToPortKey": "cab:85c52dcd-4d87-401a-8407-bbe33a99f97b:443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "PortB": {
+            "ConnectorId": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "PortX": 809.1666666666666,
+            "PortY": 604.279602941511,
+            "ConnectedToPortKey": "dev:41f52c11-b94d-410d-bc7e-e74901512afd:8e9c4788-7310-4628-8f58-69c4977606a9",
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "RootBends": [],
+          "Branches": [
+            {
+              "Id": "90ebec28-14ef-452c-bf31-ae03f8b192d2",
+              "ParentId": "root",
+              "T": 0.5,
+              "Port": {
+                "ConnectorId": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+                "PortX": 577.7135318625778,
+                "PortY": 704.279602941511,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "7ab2b959-8d85-48c9-ad0b-e58df6714821",
+          "CableId": "5395ad14-a615-4ff2-a7e9-c8c02a97f5b1",
+          "PortA": {
+            "ConnectorId": "5460e039-3ec4-4471-ad5b-d492ba964456",
+            "PortX": 335.4999999999999,
+            "PortY": 487.54851944054724,
+            "ConnectedToPortKey": "dev:279aa581-9092-407c-9bb3-0dcd79d115db:232316f2-fee9-4493-b004-abd6d115d12a",
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "PortB": {
+            "ConnectorId": "047b91c1-0d10-4095-b784-dd6dc5e21b4a",
+            "PortX": 316.41768249740755,
+            "PortY": 121.48803283339964,
+            "ConnectedToPortKey": "dev:5dbb410d-f5f3-43ff-b5f5-ed44e49efc77:2331f879-c6df-46d0-a16c-9bb494ab91c2",
+            "FixedFacing": "Top",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "RootBends": [
+            {
+              "X": 172.0843491640743,
+              "Y": 487.54851944054724
+            },
+            {
+              "X": 172.0843491640743,
+              "Y": 117.48803283339964
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "0ae5e0a1-6a67-414f-b87e-39889b98e48c",
+              "ParentId": "root",
+              "T": 0.7270743956620971,
+              "Port": {
+                "ConnectorId": "e549c701-86c5-47b3-aebb-1e7b0704fe76",
+                "PortX": 263.91768249740755,
+                "PortY": 156.48803283339964,
+                "ConnectedToPortKey": "dev:5dbb410d-f5f3-43ff-b5f5-ed44e49efc77:81853df5-250c-4939-8534-528243f04373",
+                "FixedFacing": "Left",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            },
+            {
+              "Id": "7a231c4d-43c2-4def-8513-cb3caf1041f8",
+              "ParentId": "root",
+              "T": 0.5586370363721567,
+              "Port": {
+                "ConnectorId": "3956db41-23f6-4a24-ac35-cd6610c378b6",
+                "PortX": 704.4727507607942,
+                "PortY": 494.37337575370844,
+                "ConnectedToPortKey": "dev:7b5f00e5-18e9-4663-8038-46d582d135df:b78dc7d4-bb5f-4b8c-a491-87341f43797b",
+                "FixedFacing": "Left",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": [
+                {
+                  "X": 532.63676995065,
+                  "Y": 270.37333333333333
+                },
+                {
+                  "X": 532.63676995065,
+                  "Y": 494.37337575370844
+                }
+              ]
+            },
+            {
+              "Id": "b257e98a-67ba-4489-a1aa-34260ddcea3d",
+              "ParentId": "root",
+              "T": 0.75,
+              "Port": {
+                "ConnectorId": "b8b5c133-a030-4411-89f2-3d65c493e62b",
+                "PortX": 272.0843491640743,
+                "PortY": 140.857067194168,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Left",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": -198.87449208462942,
+          "NameLabelDY": 180.66666666666663,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "2952b8df-15e1-49ed-9801-59ce60e6e5c8",
+          "CableId": "5395ad14-a615-4ff2-a7e9-c8c02a97f5b1",
+          "PortA": {
+            "ConnectorId": "5460e039-3ec4-4471-ad5b-d492ba964456",
+            "PortX": 270.83935523529806,
+            "PortY": 590.9723151879423,
+            "ConnectedToPortKey": null,
+            "FixedFacing": "Bottom",
+            "HasCustomLabelPosition": true,
+            "LabelDX": 1.795000000000016,
+            "LabelDY": -0.33333333333325754
+          },
+          "PortB": {
+            "ConnectorId": "047b91c1-0d10-4095-b784-dd6dc5e21b4a",
+            "PortX": 461.66666666666663,
+            "PortY": 672.9200000000001,
+            "ConnectedToPortKey": null,
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": false,
+            "LabelDX": 0,
+            "LabelDY": 0
+          },
+          "RootBends": [
+            {
+              "X": 282.33935523529806,
+              "Y": 590.9723151879423
+            },
+            {
+              "X": 282.33935523529806,
+              "Y": 672.9200000000001
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "859047a7-42dc-476c-82b0-6f7133224b5d",
+              "ParentId": "root",
+              "T": 0.46161266477767393,
+              "Port": {
+                "ConnectorId": "e549c701-86c5-47b3-aebb-1e7b0704fe76",
+                "PortX": 314.99999999999994,
+                "PortY": 768.3733333333332,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            },
+            {
+              "Id": "f7204f05-2815-4e0d-b083-0c4d61f6be41",
+              "ParentId": "root",
+              "T": 0.6134814622276712,
+              "Port": {
+                "ConnectorId": "3956db41-23f6-4a24-ac35-cd6610c378b6",
+                "PortX": 355.66666666666663,
+                "PortY": 569.5866666666667,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Bottom",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            },
+            {
+              "Id": "560fd81b-ecdf-4fc7-ac58-f8fd0e7ac5ba",
+              "ParentId": "root",
+              "T": 0.75,
+              "Port": {
+                "ConnectorId": "b8b5c133-a030-4411-89f2-3d65c493e62b",
+                "PortX": 392.22291760581004,
+                "PortY": 772.9200000000001,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": false,
+          "Override": null
+        }
+      ],
+      "Connections": [],
+      "Shapes": [
+        {
+          "Id": "34ff2b3b-f284-42f1-880d-ec3be20c2489",
+          "Kind": "Text",
+          "X": 16.333333333333258,
+          "Y": 13.706666666666678,
+          "Width": 100.66666666666663,
+          "Height": 34.66666666666667,
+          "FillHex": "#FFFFFF",
+          "StrokeHex": "#000000",
+          "StrokeThickness": 2,
+          "ArrowHeadSize": 18,
+          "LineStyle": "Solid",
+          "StartLineCap": "Square",
+          "EndLineCap": "Square",
+          "LinePoints": [],
+          "ZOrder": 0,
+          "BehindDiagram": false,
+          "Text": "\uC7A5\uCE58\uAD6C\uC131\uB3C4",
+          "TextRtfBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcdWMxXGh0bWF1dHNwXGRlZmYye1xmb250dGJse1xmMFxmY2hhcnNldDAgVGltZXMgTmV3IFJvbWFuO317XGYyXGZjaGFyc2V0MTI5IFwnYjhcJ2JjXCdjMFwnYmEgXCdiMFwnZWRcJ2I1XCdmMTt9fXtcY29sb3J0YmxccmVkMFxncmVlbjBcYmx1ZTA7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O31cbG9jaFxoaWNoXGRiY2hccGFyZFxwbGFpblxsdHJwYXJcaXRhcDB7XGxhbmcxMDMzXGZzMjFcZjJcY2YwIFxjZjBccWN7XGYyIHtcbHRyY2ggXCdjMFwnZTVcJ2M0XCdhMVwnYjFcJ2I4XCdiY1wnYmFcJ2I1XCdiNX1cbGkwXHJpMFxzYTBcc2IwXGZpMFxxY1xwYXJ9DQp9DQp9",
+          "FontSize": 14,
+          "TextColorHex": "#000000",
+          "FontFamily": "\uB9D1\uC740 \uACE0\uB515",
+          "TextBold": false,
+          "TextItalic": false,
+          "TextUnderline": false,
+          "TextAlignment": "Center"
+        },
+        {
+          "Id": "da2bbe0c-20c6-4f24-8d1a-f5d3f4ea570f",
+          "Kind": "Text",
+          "X": 21.66666666666663,
+          "Y": 102.37333333333333,
+          "Width": 100.66666666666663,
+          "Height": 34.66666666666667,
+          "FillHex": "#FFFFFF",
+          "StrokeHex": "#000000",
+          "StrokeThickness": 2,
+          "ArrowHeadSize": 18,
+          "LineStyle": "Solid",
+          "StartLineCap": "Square",
+          "EndLineCap": "Square",
+          "LinePoints": [],
+          "ZOrder": 1,
+          "BehindDiagram": false,
+          "Text": "\uC7A5\uCE58\uAD6C\uC131\uB3C4",
+          "TextRtfBase64": "e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcdWMxXGh0bWF1dHNwXGRlZmYye1xmb250dGJse1xmMFxmY2hhcnNldDAgVGltZXMgTmV3IFJvbWFuO317XGYyXGZjaGFyc2V0MTI5IFwnYjhcJ2JjXCdjMFwnYmEgXCdiMFwnZWRcJ2I1XCdmMTt9fXtcY29sb3J0YmxccmVkMFxncmVlbjBcYmx1ZTA7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O31cbG9jaFxoaWNoXGRiY2hccGFyZFxwbGFpblxsdHJwYXJcaXRhcDB7XGxhbmcxMDMzXGZzMjFcZjJcY2YwIFxjZjBccWN7XGYyIHtcbHRyY2ggXCdjMFwnZTVcJ2M0XCdhMVwnYjFcJ2I4XCdiY1wnYmFcJ2I1XCdiNX1cbGkwXHJpMFxzYTBcc2IwXGZpMFxxY1xwYXJ9DQp9DQp9",
+          "FontSize": 14,
+          "TextColorHex": "#000000",
+          "FontFamily": "\uB9D1\uC740 \uACE0\uB515",
+          "TextBold": false,
+          "TextItalic": false,
+          "TextUnderline": false,
+          "TextAlignment": "Center"
+        }
+      ]
+    },
+    {
+      "Id": "9933cc95-c426-481c-96f3-4b97ad074b18",
+      "Name": "Sheet2",
+      "PaperSize": "A3_Landscape",
+      "KeepPaperAspectRatio": false,
+      "PageScale": 1,
+      "LeadingPageColumns": 0,
+      "LeadingPageRows": 0,
+      "Zones": [],
+      "DeviceInstances": [
+        {
+          "Id": "e3844c39-9c8a-419a-9d6a-7ab33f66b7a9",
+          "DeviceId": "dba2dd67-2407-4984-8c5f-d512cf53a49f",
+          "X": 277.41597796143265,
+          "Y": 305.3708539944904,
+          "Width": 90,
+          "Height": 60,
+          "ZoneId": null,
+          "Override": null
+        },
+        {
+          "Id": "ba9f340d-34c9-4fe5-8197-c002232df1c5",
+          "DeviceId": "e67234d2-caab-4ed1-a258-e9cfb0b6bd03",
+          "X": 277.41597796143265,
+          "Y": 449.8911845730028,
+          "Width": 90,
+          "Height": 55,
+          "ZoneId": null,
+          "Override": {
+            "Id": "e67234d2-caab-4ed1-a258-e9cfb0b6bd03",
+            "Name": "DDDDD",
+            "NameRtfBase64": "",
+            "Kind": "\uC8FC\uC7A5\uCE58",
+            "Ports": [
+              {
+                "Id": "81853df5-250c-4939-8534-528243f04373",
+                "Designator": "1",
+                "Side": "Left",
+                "ConnType": "",
+                "Description": "",
+                "ShowConnType": false,
+                "LabelFontSize": 11,
+                "LabelColorHex": "#7F7F7F",
+                "HasCustomLabelPosition": false,
+                "LabelOffsetX": 0,
+                "LabelOffsetY": 0,
+                "Position": -1
+              },
+              {
+                "Id": "2331f879-c6df-46d0-a16c-9bb494ab91c2",
+                "Designator": "2",
+                "Side": "Top",
+                "ConnType": "",
+                "Description": "",
+                "ShowConnType": false,
+                "LabelFontSize": 11,
+                "LabelColorHex": "#7F7F7F",
+                "HasCustomLabelPosition": false,
+                "LabelOffsetX": 0,
+                "LabelOffsetY": 0,
+                "Position": -1
+              },
+              {
+                "Id": "65c7f97b-847c-40e8-aaeb-bb53e4c84315",
+                "Designator": "3",
+                "Side": "Bottom",
+                "ConnType": "",
+                "Description": "",
+                "ShowConnType": false,
+                "LabelFontSize": 11,
+                "LabelColorHex": "#7F7F7F",
+                "HasCustomLabelPosition": true,
+                "LabelOffsetX": 7.333333333333371,
+                "LabelOffsetY": -5.98166666666674,
+                "Position": 0.5276398185421417
+              },
+              {
+                "Id": "6e61e194-8e33-411e-8091-093581f4b9c6",
+                "Designator": "4",
+                "Side": "Right",
+                "ConnType": "",
+                "Description": "",
+                "ShowConnType": false,
+                "LabelFontSize": 11,
+                "LabelColorHex": "#7F7F7F",
+                "HasCustomLabelPosition": false,
+                "LabelOffsetX": 0,
+                "LabelOffsetY": 0,
+                "Position": -1
+              }
+            ],
+            "Features": {},
+            "NameBold": true,
+            "NameItalic": false,
+            "NameUnderline": false,
+            "NameFontSize": 10,
+            "NameColorHex": "#000000",
+            "NameFontFamily": "\uB9D1\uC740 \uACE0\uB515",
+            "NameTextAlignment": "Center",
+            "BackgroundColorHex": "#FFFFFF"
+          }
+        },
+        {
+          "Id": "d77d965a-e6cf-436f-8de9-e3669c2e4ae0",
+          "DeviceId": "a25a7dbc-5371-4cd8-93c4-0c13855acb71",
+          "X": 590.3636363636365,
+          "Y": 449.8911845730028,
+          "Width": 90,
+          "Height": 55,
+          "ZoneId": null,
+          "Override": null
+        }
+      ],
+      "CableInstances": [
+        {
+          "Id": "f7e0910a-82c1-44ca-896b-dec0f961cbb7",
+          "CableId": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+          "PortA": {
+            "ConnectorId": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+            "PortX": 374.91597796143265,
+            "PortY": 335.3708539944904,
+            "ConnectedToPortKey": "dev:e3844c39-9c8a-419a-9d6a-7ab33f66b7a9:0202fc7d-5155-4e78-aea6-c9b132d79804",
+            "FixedFacing": "Right",
+            "HasCustomLabelPosition": true,
+            "LabelDX": 4.5996666666666215,
+            "LabelDY": 9.333333333333371
+          },
+          "PortB": {
+            "ConnectorId": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "PortX": 563.1873278236914,
+            "PortY": 309.8374655647382,
+            "ConnectedToPortKey": null,
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": true,
+            "LabelDX": 5.12833333333333,
+            "LabelDY": -3.6666666666666288
+          },
+          "RootBends": [],
+          "Branches": [
+            {
+              "Id": "8b1e876d-f67d-425d-b3dd-01825570b818",
+              "ParentId": "root",
+              "T": 0.5,
+              "Port": {
+                "ConnectorId": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+                "PortX": 456.2849586776859,
+                "PortY": 409.8374655647382,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "da7d072b-2e8b-4513-90e1-e8184924b986",
+          "CableId": "9f74768c-d5fd-4082-becf-f9b1de1f9814",
+          "PortA": {
+            "ConnectorId": "c9eced2c-b709-4ffa-b5e5-d8c74d71dfb3",
+            "PortX": 570.6873278236914,
+            "PortY": 309.8374655647382,
+            "ConnectedToPortKey": "cab:f7e0910a-82c1-44ca-896b-dec0f961cbb7:443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "FixedFacing": "Right",
+            "HasCustomLabelPosition": true,
+            "LabelDX": 1.794999999999959,
+            "LabelDY": 0.33333333333337123
+          },
+          "PortB": {
+            "ConnectorId": "443c6c0b-2492-4dec-b683-3f7efb5bf07d",
+            "PortX": 269.91597796143265,
+            "PortY": 477.3911845730028,
+            "ConnectedToPortKey": "dev:ba9f340d-34c9-4fe5-8197-c002232df1c5:81853df5-250c-4939-8534-528243f04373",
+            "FixedFacing": "Left",
+            "HasCustomLabelPosition": true,
+            "LabelDX": -8.343000000000018,
+            "LabelDY": 2.6666666666666288
+          },
+          "RootBends": [
+            {
+              "X": 582.1873278236914,
+              "Y": 309.8374655647382
+            },
+            {
+              "X": 582.1873278236914,
+              "Y": 382.6308539944904
+            },
+            {
+              "X": 285.4132231404959,
+              "Y": 382.6308539944904
+            },
+            {
+              "X": 285.4132231404959,
+              "Y": 477.3911845730028
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "c365a38b-0640-4271-9129-454c4200ac84",
+              "ParentId": "root",
+              "T": 0.16958048947654025,
+              "Port": {
+                "ConnectorId": "8a0104d1-bb9f-45ca-b292-2fc8750b8206",
+                "PortX": 633.1314772103934,
+                "PortY": 442.3911845730028,
+                "ConnectedToPortKey": "dev:d77d965a-e6cf-436f-8de9-e3669c2e4ae0:cd2a206e-7177-4d96-9dfb-881e59237d10",
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": true,
+                "LabelDX": 17.12833333333333,
+                "LabelDY": 5
+              },
+              "Bends": [
+                {
+                  "X": 580.1528291138558,
+                  "Y": 461.6601101928376
+                }
+              ]
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": true,
+          "Override": null
+        },
+        {
+          "Id": "d9e50022-1789-41f4-bf6c-e5eb5cf70964",
+          "CableId": "5395ad14-a615-4ff2-a7e9-c8c02a97f5b1",
+          "PortA": {
+            "ConnectorId": "5460e039-3ec4-4471-ad5b-d492ba964456",
+            "PortX": 687.8636363636365,
+            "PortY": 477.3911845730028,
+            "ConnectedToPortKey": "dev:d77d965a-e6cf-436f-8de9-e3669c2e4ae0:05865572-1c04-4547-9ae6-e089731021f9",
+            "FixedFacing": "Right",
+            "HasCustomLabelPosition": true,
+            "LabelDX": -0.8716666666666697,
+            "LabelDY": -6.333333333333371
+          },
+          "PortB": {
+            "ConnectorId": "047b91c1-0d10-4095-b784-dd6dc5e21b4a",
+            "PortX": 324.9035616302254,
+            "PortY": 512.3911845730029,
+            "ConnectedToPortKey": "dev:ba9f340d-34c9-4fe5-8197-c002232df1c5:65c7f97b-847c-40e8-aaeb-bb53e4c84315",
+            "FixedFacing": "Bottom",
+            "HasCustomLabelPosition": true,
+            "LabelDX": -1.5383333333333553,
+            "LabelDY": 1.6666666666666288
+          },
+          "RootBends": [
+            {
+              "X": 691.8636363636365,
+              "Y": 579.7011019283747
+            },
+            {
+              "X": 323.23414014262204,
+              "Y": 579.7011019283747
+            },
+            {
+              "X": 323.23414014262204,
+              "Y": 516.3911845730029
+            }
+          ],
+          "Branches": [
+            {
+              "Id": "242c0f02-fa75-42c1-84f2-8d7553a1b2bf",
+              "ParentId": "root",
+              "T": 0.3333333333333333,
+              "Port": {
+                "ConnectorId": "e549c701-86c5-47b3-aebb-1e7b0704fe76",
+                "PortX": 616.0339695792212,
+                "PortY": 679.7011019283747,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            },
+            {
+              "Id": "4fc40ae1-e139-48d5-89c9-26409025397b",
+              "ParentId": "root",
+              "T": 0.6666666666666666,
+              "Port": {
+                "ConnectorId": "3956db41-23f6-4a24-ac35-cd6610c378b6",
+                "PortX": 436.3943854394341,
+                "PortY": 479.70110192837467,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Bottom",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            },
+            {
+              "Id": "3c5bfa9d-e480-4a85-ae08-d2b3d45844da",
+              "ParentId": "root",
+              "T": 0.75,
+              "Port": {
+                "ConnectorId": "b8b5c133-a030-4411-89f2-3d65c493e62b",
+                "PortX": 391.48448940448725,
+                "PortY": 679.7011019283747,
+                "ConnectedToPortKey": null,
+                "FixedFacing": "Top",
+                "HasCustomLabelPosition": false,
+                "LabelDX": 0,
+                "LabelDY": 0
+              },
+              "Bends": []
+            }
+          ],
+          "NameLabelDX": 0,
+          "NameLabelDY": 0,
+          "ShowName": true,
+          "Override": null
+        }
+      ],
+      "Connections": [],
+      "Shapes": [
+        {
+          "Id": "27d95dde-124e-4ee1-a7ad-3ce0e63e6abc",
+          "Kind": "Line",
+          "X": 501.66666666666674,
+          "Y": 149.04,
+          "Width": 337.33333333333314,
+          "Height": 0,
+          "FillHex": "#FFFFFF",
+          "StrokeHex": "#000000",
+          "StrokeThickness": 4,
+          "ArrowHeadSize": 18,
+          "LineStyle": "Solid",
+          "StartLineCap": "Arrow",
+          "EndLineCap": "Square",
+          "LinePoints": [],
+          "ZOrder": 0,
+          "BehindDiagram": false,
+          "Text": "",
+          "TextRtfBase64": "",
+          "FontSize": 14,
+          "TextColorHex": "#000000",
+          "FontFamily": "\uB9D1\uC740 \uACE0\uB515",
+          "TextBold": false,
+          "TextItalic": false,
+          "TextUnderline": false,
+          "TextAlignment": "Center"
+        }
+      ]
+    }
+  ],
+  "CableTypeColors": {},
+  "PaperSize": "A3_Landscape",
+  "Zones": [],
+  "DeviceInstances": [],
+  "CableInstances": [],
+  "Connections": [],
+  "Shapes": []
+}

@@ -1,0 +1,82 @@
+<Window x:Class="ESDP.SettingsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="설정" Height="525" Width="520"
+        MinHeight="505" MinWidth="480" ResizeMode="CanResizeWithGrip"
+        WindowStartupLocation="CenterOwner">
+    <Grid Margin="12">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="110"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+            <TextBlock Text="화면 테마" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="ThemeCombo" Grid.Column="1" Height="30" SelectedIndex="0">
+                <ComboBoxItem Content="주황색 라이트 (기본)" Tag="SoftOrange"/>
+                <ComboBoxItem Content="하늘색 라이트" Tag="SkyBlue"/>
+                <ComboBoxItem Content="다크 모드" Tag="Dark"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="1" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="110"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+            <TextBlock Text="격자 선명도" FontWeight="Bold" VerticalAlignment="Center"/>
+            <ComboBox x:Name="GridStrengthCombo" Grid.Column="1" Height="30" SelectedIndex="1">
+                <ComboBoxItem Content="연하게" Tag="Light"/>
+                <ComboBoxItem Content="보통 (권장)" Tag="Normal"/>
+                <ComboBoxItem Content="진하게" Tag="Strong"/>
+            </ComboBox>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0,0,0,14">
+            <Grid.ColumnDefinitions><ColumnDefinition Width="110"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+            <TextBlock Text="업데이트 위치" FontWeight="Bold" VerticalAlignment="Center"/>
+            <TextBox x:Name="UpdateSharePathBox" Grid.Column="1" Height="30"
+                     VerticalContentAlignment="Center"
+                     ToolTip="YYMMdd_ESDP 폴더들이 들어 있는 공유 폴더 주소"/>
+        </Grid>
+
+        <TextBlock Grid.Row="3" Text="장치 종류별 배경색" FontWeight="Bold" Margin="0,0,0,8"/>
+
+        <ItemsControl Grid.Row="4" x:Name="RowItems">
+            <ItemsControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid Margin="0,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="100"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="Auto"/>
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0" Text="{Binding KindName}" VerticalAlignment="Center"/>
+                        <ComboBox Grid.Column="1" ItemsSource="{Binding Options}"
+                                  SelectedItem="{Binding Selected, Mode=TwoWay}">
+                            <ComboBox.ItemTemplate>
+                                <DataTemplate>
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Width="16" Height="16" Margin="0,0,6,0"
+                                                   Stroke="Gray" StrokeThickness="1"
+                                                   Fill="{Binding Brush}"/>
+                                        <TextBlock Text="{Binding Name}" VerticalAlignment="Center"/>
+                                    </StackPanel>
+                                </DataTemplate>
+                            </ComboBox.ItemTemplate>
+                        </ComboBox>
+                        <Button Grid.Column="2" Content="색 선택…" Margin="6,0,0,0"
+                                Padding="8,2" Click="RowColorPickerButton_Click"/>
+                    </Grid>
+                </DataTemplate>
+            </ItemsControl.ItemTemplate>
+        </ItemsControl>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,12,0,0">
+            <Button Content="확인" Style="{StaticResource PrimaryButtonStyle}" Width="80" Margin="0,0,8,0" Click="OkButton_Click"/>
+            <Button Content="취소" Width="80" Click="CancelButton_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

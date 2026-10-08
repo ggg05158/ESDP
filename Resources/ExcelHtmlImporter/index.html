@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ESDP Excel 가져오기</title>
+  <style>
+    :root { color-scheme: light; font-family: "Malgun Gothic", sans-serif; }
+    body { margin: 0; background: #f5f7fa; color: #17202a; }
+    header { padding: 20px 24px 14px; background: white; border-bottom: 1px solid #ccd6e0; }
+    h1 { margin: 0 0 8px; font-size: 22px; }
+    #status { color: #536475; }
+    main { padding: 16px 24px 88px; }
+    #tabs { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 10px; }
+    #tabs button { border: 1px solid #9eb1c4; background: white; padding: 7px 12px; cursor: pointer; }
+    #tabs button.active { background: #1769aa; color: white; border-color: #1769aa; }
+    #tableWrap { overflow: auto; max-height: calc(100vh - 230px); background: white; border: 1px solid #bdc9d5; }
+    table { border-collapse: collapse; min-width: 100%; font-size: 13px; }
+    th, td { border: 1px solid #d7dfe7; min-width: 90px; height: 25px; padding: 3px 6px; white-space: nowrap; }
+    th { position: sticky; top: 0; background: #eaf0f6; z-index: 1; }
+    th.row { position: sticky; left: 0; min-width: 42px; background: #eaf0f6; z-index: 2; }
+    footer { position: fixed; left: 0; right: 0; bottom: 0; display: flex; justify-content: space-between; align-items: center; padding: 14px 24px; background: white; border-top: 1px solid #ccd6e0; }
+    #confirm { border: 0; border-radius: 4px; padding: 10px 24px; background: #1769aa; color: white; font-weight: 700; cursor: pointer; }
+    #confirm:disabled { background: #9aa8b5; cursor: default; }
+    .error { color: #b42318 !important; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Excel 가져오기 미리보기</h1>
+    <div id="status">파일을 해석하고 있습니다…</div>
+  </header>
+  <main>
+    <div id="tabs"></div>
+    <div id="tableWrap"><table id="preview"></table></div>
+  </main>
+  <footer>
+    <span>표시된 내용이 맞으면 가져오기를 눌러 주세요.</span>
+    <button id="confirm" type="button" disabled>프로그램으로 가져오기</button>
+  </footer>
+  <script src="jszip.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

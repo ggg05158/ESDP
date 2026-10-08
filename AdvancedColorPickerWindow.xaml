@@ -1,0 +1,246 @@
+<Window x:Class="ESDP.AdvancedColorPickerWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="색" Width="570" Height="560"
+        MinWidth="570" MinHeight="540"
+        Background="{DynamicResource AppSurfaceBrush}" Foreground="{DynamicResource AppTextBrush}"
+        WindowStartupLocation="CenterOwner"
+        ResizeMode="CanResizeWithGrip" ShowInTaskbar="False">
+    <Grid Margin="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <!-- The system ComboBox chrome ignores dark backgrounds on some Windows themes. -->
+            <Style x:Key="ColorModelStyle" TargetType="{x:Type ComboBox}" BasedOn="{StaticResource {x:Type ComboBox}}">
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="{x:Type ComboBox}">
+                            <Grid>
+                                <ToggleButton Focusable="False" Foreground="{TemplateBinding Foreground}"
+                                              IsChecked="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate TargetType="{x:Type ToggleButton}">
+                                            <Border x:Name="Chrome" Background="{DynamicResource AppControlBrush}"
+                                                    BorderBrush="{DynamicResource AppInputBorderBrush}" BorderThickness="1" Padding="7,4">
+                                                <Grid>
+                                                    <ContentPresenter/>
+                                                </Grid>
+                                            </Border>
+                                            <ControlTemplate.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter TargetName="Chrome" Property="BorderBrush" Value="{DynamicResource AppAccentBrush}"/>
+                                                </Trigger>
+                                            </ControlTemplate.Triggers>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                    <Grid>
+                                        <ContentPresenter Content="{TemplateBinding SelectionBoxItem}"
+                                                          ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}" Margin="0,0,18,0"/>
+                                        <Path Data="M0,0 L4,4 L8,0 Z" Fill="{DynamicResource AppTextBrush}"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                    </Grid>
+                                </ToggleButton>
+                                <Popup x:Name="PART_Popup" Placement="Bottom" AllowsTransparency="True" Focusable="False"
+                                       IsOpen="{TemplateBinding IsDropDownOpen}">
+                                    <Border Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppInputBorderBrush}"
+                                            BorderThickness="1" MinWidth="{Binding ActualWidth, RelativeSource={RelativeSource TemplatedParent}}">
+                                        <ItemsPresenter KeyboardNavigation.DirectionalNavigation="Contained"/>
+                                    </Border>
+                                </Popup>
+                            </Grid>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+            <!-- Transparency is visible in both light and dark application themes. -->
+            <DrawingBrush x:Key="TransparencyPattern" TileMode="Tile"
+                          Viewport="0,0,12,12" ViewportUnits="Absolute">
+                <DrawingBrush.Drawing>
+                    <DrawingGroup>
+                        <GeometryDrawing Brush="White" Geometry="M0,0 H12 V12 H0 Z"/>
+                        <GeometryDrawing Brush="#FFD6D6D6" Geometry="M0,0 H6 V6 H0 Z M6,6 H12 V12 H6 Z"/>
+                    </DrawingGroup>
+                </DrawingBrush.Drawing>
+            </DrawingBrush>
+        </Grid.Resources>
+
+        <TabControl x:Name="ColorTabs" Grid.Row="0" Grid.Column="0" Margin="0,0,14,0"
+                    Background="{DynamicResource AppPanelBrush}">
+            <TabItem Header="기본">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="10">
+                        <TextBlock Text="색" FontWeight="SemiBold"
+                                   FontSize="13" Margin="0,0,0,8"/>
+                        <ItemsControl x:Name="BasicColors">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <UniformGrid Columns="12"/>
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemTemplate>
+                                <DataTemplate>
+                        <Button Width="25" Height="25" Margin="1" Style="{StaticResource TileButtonStyle}"
+                                            Padding="1" Tag="{Binding Hex}"
+                                            ToolTip="{Binding Hex}"
+                                            Click="BasicColorButton_Click">
+                                        <Rectangle Width="19" Height="19"
+                                                   Fill="{Binding Brush}"
+                                                   Stroke="{DynamicResource AppPanelHeaderBorderBrush}"/>
+                                    </Button>
+                                </DataTemplate>
+                            </ItemsControl.ItemTemplate>
+                        </ItemsControl>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+
+            <TabItem Header="사용자 지정">
+                <ScrollViewer VerticalScrollBarVisibility="Auto"
+                              HorizontalScrollBarVisibility="Disabled">
+                    <StackPanel Margin="12">
+                        <TextBlock Text="색" FontWeight="SemiBold"
+                                   FontSize="13" Margin="0,0,0,7"/>
+                        <StackPanel Orientation="Horizontal">
+                            <Canvas x:Name="SpectrumCanvas" Width="270" Height="165"
+                                    Background="Transparent"
+                                    ClipToBounds="False" Cursor="Cross" Focusable="True"
+                                    AutomationProperties.Name="색상과 채도 선택. 좌우는 색상, 상하는 채도"
+                                    KeyDown="Picker_KeyDown" LostMouseCapture="Picker_LostMouseCapture"
+                                    MouseLeftButtonDown="SpectrumCanvas_MouseLeftButtonDown"
+                                    MouseMove="SpectrumCanvas_MouseMove"
+                                    MouseLeftButtonUp="SpectrumCanvas_MouseLeftButtonUp">
+                                <Image x:Name="SpectrumImage" Width="270" Height="165"
+                                       Stretch="Fill" IsHitTestVisible="False"/>
+                                <Canvas x:Name="SpectrumIndicator" Width="11" Height="11" IsHitTestVisible="False">
+                                    <Ellipse Width="11" Height="11" Stroke="Black" StrokeThickness="3"/>
+                                    <Ellipse Width="11" Height="11" Stroke="White" StrokeThickness="1"/>
+                                </Canvas>
+                            </Canvas>
+                            <Canvas x:Name="BrightnessCanvas" Width="36" Height="165"
+                                    Background="Transparent"
+                                    Margin="12,0,0,0" Cursor="SizeNS" Focusable="True"
+                                    AutomationProperties.Name="명도 선택. 위는 흰색, 아래는 검정"
+                                    KeyDown="Picker_KeyDown" LostMouseCapture="Picker_LostMouseCapture"
+                                    MouseLeftButtonDown="BrightnessCanvas_MouseLeftButtonDown"
+                                    MouseMove="BrightnessCanvas_MouseMove"
+                                    MouseLeftButtonUp="BrightnessCanvas_MouseLeftButtonUp">
+                                <Rectangle x:Name="BrightnessBar" Width="18" Height="165"
+                                           Stroke="{DynamicResource AppStrongBorderBrush}" StrokeThickness="1"
+                                           IsHitTestVisible="False"/>
+                                <Path x:Name="BrightnessIndicator" Data="M0,0 L8,-5 L8,5 Z"
+                                      Stroke="White" StrokeThickness="1" Fill="Black" IsHitTestVisible="False"/>
+                            </Canvas>
+                        </StackPanel>
+                        <TextBlock Text="좌우: 색상 · 상하: 채도 · 오른쪽: 명도" FontSize="11"
+                                   Foreground="{DynamicResource AppMutedTextBrush}" Margin="0,10,0,0"/>
+                        <StackPanel Orientation="Horizontal" Margin="0,12,0,0">
+                            <TextBlock Text="색 모델" VerticalAlignment="Center" Margin="0,0,10,0"/>
+                            <ComboBox x:Name="ColorModel" Width="115" SelectedIndex="0" Style="{StaticResource ColorModelStyle}"
+                                      SelectionChanged="ColorModel_SelectionChanged">
+                                <ComboBoxItem Content="RGB"/>
+                                <ComboBoxItem Content="HSL"/>
+                            </ComboBox>
+                        </StackPanel>
+
+                        <Grid x:Name="RgbInputs" Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="90"/>
+                                <ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="빨강(R)" Margin="0,0,0,3"/>
+                                <TextBox x:Name="RedBox" Height="28"
+                                         TextChanged="RgbBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="8,0,0,0">
+                                <TextBlock Text="녹색(G)" Margin="0,0,0,3"/>
+                                <TextBox x:Name="GreenBox" Height="28"
+                                         TextChanged="RgbBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Margin="8,0,0,0">
+                                <TextBlock Text="파랑(B)" Margin="0,0,0,3"/>
+                                <TextBox x:Name="BlueBox" Height="28"
+                                         TextChanged="RgbBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                            </StackPanel>
+                        </Grid>
+                        <Grid x:Name="HslInputs" Visibility="Collapsed" Margin="0,10,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="90"/><ColumnDefinition Width="90"/><ColumnDefinition Width="90"/>
+                            </Grid.ColumnDefinitions>
+                            <StackPanel>
+                                <TextBlock Text="색상(H)" Margin="0,0,0,3"/>
+                                <TextBox x:Name="HueBox" Height="28" ToolTip="0–255"
+                                         TextChanged="HslBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="1" Margin="8,0,0,0">
+                                <TextBlock Text="채도(S)" Margin="0,0,0,3"/>
+                                <TextBox x:Name="SaturationBox" Height="28" ToolTip="0–255"
+                                         TextChanged="HslBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                            </StackPanel>
+                            <StackPanel Grid.Column="2" Margin="8,0,0,0">
+                                <TextBlock Text="명도(L)" Margin="0,0,0,3"/>
+                                <TextBox x:Name="LightnessBox" Height="28" ToolTip="0–255"
+                                         TextChanged="HslBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                            </StackPanel>
+                        </Grid>
+
+                        <Grid Margin="0,12,0,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="65"/>
+                                <ColumnDefinition Width="120"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="HEX" VerticalAlignment="Center"/>
+                            <TextBox x:Name="HexBox" Grid.Column="1" Height="28"
+                                     VerticalContentAlignment="Center"
+                                     TextChanged="HexBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+                <Button Grid.Column="2" Content="⌾ 스포이트" Style="{StaticResource SubtleButtonStyle}"
+                                    Margin="8,0,0,0" Height="28" Padding="6,2"
+                                    Click="EyedropperButton_Click"/>
+                        </Grid>
+                    </StackPanel>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+
+        <StackPanel Grid.Row="0" Grid.Column="1">
+            <Button Content="확인" Style="{StaticResource PrimaryButtonStyle}" Height="38" Margin="0,0,0,10"
+                    IsDefault="True" Click="OkButton_Click"/>
+            <Button Content="취소" Height="38" IsCancel="True"/>
+            <TextBlock Text="새 색" HorizontalAlignment="Center"
+                       Margin="0,30,0,7"/>
+            <Border Background="{StaticResource TransparencyPattern}" BorderBrush="{DynamicResource AppStrongBorderBrush}" BorderThickness="1">
+                <Rectangle x:Name="NewColorPreview" Height="80"/>
+            </Border>
+            <TextBlock Text="현재 색" HorizontalAlignment="Center"
+                       Margin="0,10,0,7"/>
+            <Border Background="{StaticResource TransparencyPattern}" BorderBrush="{DynamicResource AppStrongBorderBrush}" BorderThickness="1">
+                <Rectangle x:Name="CurrentColorPreview" Height="80"/>
+            </Border>
+        </StackPanel>
+
+        <Grid Grid.Row="1" Grid.Column="0" Margin="0,14,14,0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="90"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="65"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock Text="투명도(T)" VerticalAlignment="Center"/>
+            <Slider x:Name="TransparencySlider" Grid.Column="1"
+                    Minimum="0" Maximum="100" TickFrequency="1"
+                    ValueChanged="TransparencySlider_ValueChanged"/>
+            <TextBox x:Name="TransparencyBox" Grid.Column="2"
+                     Height="28" Margin="8,0,0,0"
+                     VerticalContentAlignment="Center"
+                     TextChanged="TransparencyBox_TextChanged" LostKeyboardFocus="ColorInput_LostKeyboardFocus"/>
+        </Grid>
+    </Grid>
+</Window>

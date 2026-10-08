@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\ESDP.csproj" />
+    <!-- Exercise internal, UI-independent algorithms without adding test packages. -->
+    <Compile Include="..\..\CableCrossingIndex.cs" Link="CableCrossingIndex.cs" />
+    <Compile Include="..\..\RectSpatialIndex.cs" Link="RectSpatialIndex.cs" />
+    <Compile Include="..\..\PdfRasterLimits.cs" Link="PdfRasterLimits.cs" />
+    <Compile Include="..\..\HistorySnapshotStore.cs" Link="HistorySnapshotStore.cs" />
+    <Compile Include="..\..\ProjectFileService.cs" Link="ProjectFileService.cs" />
+  </ItemGroup>
+</Project>

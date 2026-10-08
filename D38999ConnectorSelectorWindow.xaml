@@ -1,0 +1,138 @@
+<Window x:Class="ESDP.D38999ConnectorSelectorWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="커넥터 선택" Height="780" Width="1480"
+        MinHeight="680" MinWidth="1180"
+        WindowStartupLocation="CenterOwner" ResizeMode="CanResizeWithGrip">
+    <Grid Margin="16">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205"/><ColumnDefinition Width="8"/>
+            <ColumnDefinition Width="770"/><ColumnDefinition Width="8"/>
+            <ColumnDefinition Width="*" MinWidth="300"/>
+        </Grid.ColumnDefinitions>
+        <Border Grid.Column="0" Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="10">
+            <Grid>
+                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                <TextBlock Text="커넥터 시리즈" FontSize="17" FontWeight="SemiBold" Margin="3,2,0,9"/>
+                <ListBox x:Name="SeriesList" Grid.Row="1" DisplayMemberPath="Name" SelectionChanged="SeriesList_SelectionChanged"/>
+                <Grid Grid.Row="2" Margin="0,9,0,0">
+                    <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="6"/><ColumnDefinition Width="Auto"/></Grid.ColumnDefinitions>
+                    <Button Content="+ 시리즈" Style="{StaticResource SidebarCreateButtonStyle}" Height="30" Click="AddSeriesButton_Click"/>
+                    <Button x:Name="DeleteSeriesButton" Grid.Column="2" Content="삭제" Style="{StaticResource DangerButtonStyle}" Width="58" Height="30" IsEnabled="False" Click="DeleteSeriesButton_Click"/>
+                </Grid>
+            </Grid>
+        </Border>
+        <Grid Grid.Column="2">
+            <Grid x:Name="D38999Panel">
+                <Grid.ColumnDefinitions><ColumnDefinition Width="300"/><ColumnDefinition Width="8"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                <Border Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="14">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto">
+                        <StackPanel>
+                            <TextBlock Text="D38999 검색 조건" FontSize="18" FontWeight="SemiBold"/>
+                            <TextBlock Margin="0,3,0,12" Foreground="{DynamicResource AppMutedTextBrush}" Text="선택한 게이지 중 하나에 맞고, 공통 회선 수 범위에 들어오는 커넥터를 찾습니다." TextWrapping="Wrap"/>
+                            <TextBlock Text="주 사용 게이지" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                            <Grid Margin="0,0,0,8">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="86"/><ColumnDefinition Width="*"/><ColumnDefinition Width="20"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <ComboBox x:Name="Gauge1Combo" DisplayMemberPath="Label"/>
+                                <TextBox x:Name="Gauge1MinBox" Grid.Column="1" Margin="6,0,0,0" ToolTip="최소 회선 수" VerticalContentAlignment="Center"/>
+                                <TextBlock Grid.Column="2" Text="~" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                <TextBox x:Name="Gauge1MaxBox" Grid.Column="3" ToolTip="최대 회선 수" VerticalContentAlignment="Center"/>
+                            </Grid>
+                            <TextBlock Text="추가 게이지 (OR)" FontWeight="SemiBold" Margin="0,4,0,5"/>
+                            <Grid Margin="0,0,0,12">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="*"/><ColumnDefinition Width="8"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <ComboBox x:Name="Gauge2Combo" DisplayMemberPath="Label"/>
+                                <ComboBox x:Name="Gauge3Combo" Grid.Column="2" DisplayMemberPath="Label"/>
+                            </Grid>
+                            <Separator Margin="0,2,0,12"/>
+                            <TextBlock Text="커넥터 형태" FontWeight="SemiBold"/>
+                            <ComboBox x:Name="ConnectorTypeCombo" Margin="0,5,0,14"/>
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                                <Button Content="초기화" Style="{StaticResource SubtleButtonStyle}" Width="76" Margin="0,0,7,0" Click="ResetButton_Click"/>
+                                <Button Content="검색" Style="{StaticResource PrimaryButtonStyle}" Width="86" FontWeight="SemiBold" Click="SearchButton_Click"/>
+                            </StackPanel>
+                        </StackPanel>
+                    </ScrollViewer>
+                </Border>
+                <Border Grid.Column="2" Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="12">
+                    <Grid>
+                        <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                        <DockPanel Margin="0,0,0,9">
+                            <TextBlock x:Name="ResultCountText" DockPanel.Dock="Right" Foreground="{DynamicResource AppMutedTextBrush}" VerticalAlignment="Center"/>
+                            <TextBlock Text="적합한 Insert Arrangement" FontSize="16" FontWeight="SemiBold"/>
+                        </DockPanel>
+                        <DataGrid x:Name="ResultsGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserReorderColumns="False" IsReadOnly="True" SelectionMode="Single" RowHeaderWidth="0" GridLinesVisibility="Horizontal" AlternatingRowBackground="{DynamicResource AppAlternateRowBrush}" SelectionChanged="ResultsGrid_SelectionChanged" MouseDoubleClick="ResultsGrid_MouseDoubleClick">
+                            <DataGrid.Columns>
+                                <DataGridTextColumn Header="배열" Width="60" Binding="{Binding ArrangementId}"/>
+                                <DataGridTextColumn Header="셸" Width="40" Binding="{Binding ShellSize}"/>
+                                <DataGridTextColumn Header="전체" Width="44" Binding="{Binding TotalContacts}"/>
+                                <DataGridTextColumn Header="주 게이지" Width="62" Binding="{Binding PrimaryCompatibleContacts}"/>
+                                <DataGridTextColumn Header="잔여" Width="44" Binding="{Binding SpareContacts}"/>
+                                <DataGridTextColumn Header="호환 접점" Width="*" Binding="{Binding CompatibleSummary}"/>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+                </Border>
+            </Grid>
+            <Border x:Name="CustomSeriesPanel" Visibility="Collapsed" Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="14">
+                <Grid>
+                    <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="*"/></Grid.RowDefinitions>
+                    <DockPanel Margin="0,0,0,10">
+                        <Button DockPanel.Dock="Right" Content="+ 커넥터 추가" Width="112" Height="30" Click="AddConnectorButton_Click"/>
+                        <Button x:Name="DeleteConnectorButton" DockPanel.Dock="Right" Content="삭제" Style="{StaticResource DangerButtonStyle}" Width="60" Height="30" Margin="0,0,7,0" IsEnabled="False" Click="DeleteConnectorButton_Click"/>
+                        <StackPanel><TextBlock x:Name="CustomSeriesTitleText" FontSize="18" FontWeight="SemiBold"/><TextBlock Text="사용자가 등록한 커넥터" Foreground="{DynamicResource AppMutedTextBrush}"/></StackPanel>
+                    </DockPanel>
+                    <DataGrid x:Name="CustomConnectorsGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" IsReadOnly="True" SelectionMode="Single" RowHeaderWidth="0" GridLinesVisibility="Horizontal" AlternatingRowBackground="{DynamicResource AppAlternateRowBrush}" SelectionChanged="CustomConnectorsGrid_SelectionChanged" MouseDoubleClick="CustomConnectorsGrid_MouseDoubleClick">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="커넥터 이름" Width="*" Binding="{Binding Name}"/>
+                            <DataGridTextColumn Header="핀 수" Width="100" Binding="{Binding PinCount}"/>
+                            <DataGridTextColumn Header="핀 배치 사진" Width="130" Binding="{Binding ImageStatus}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+            </Border>
+        </Grid>
+        <Border Grid.Column="4" Background="{DynamicResource AppPanelBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="14">
+            <Grid>
+                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="270"/><RowDefinition Height="Auto"/><RowDefinition Height="*"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                <TextBlock Text="선택한 커넥터" FontSize="18" FontWeight="SemiBold" Margin="0,0,0,10"/>
+                <Border Grid.Row="1" Background="{DynamicResource AppSubtlePanelBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="8">
+                    <Grid><Image x:Name="InsertImage" Stretch="Uniform"/><TextBlock x:Name="NoImageText" Text="핀 배열 이미지가 없습니다." Foreground="{DynamicResource AppMutedTextBrush}" HorizontalAlignment="Center" VerticalAlignment="Center"/></Grid>
+                </Border>
+                <StackPanel Grid.Row="2" Margin="0,12,0,8">
+                    <TextBlock x:Name="ArrangementTitleText" FontSize="17" FontWeight="SemiBold"/>
+                    <TextBlock x:Name="ArrangementMetaText" Margin="0,4,0,0" Foreground="{DynamicResource AppMutedTextBrush}" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="ContactBreakdownText" Margin="0,5,0,0" TextWrapping="Wrap"/>
+                    <TextBlock x:Name="CompatibilityText" Margin="0,5,0,0" Foreground="{DynamicResource AppAccentTextBrush}" TextWrapping="Wrap"/>
+                </StackPanel>
+                <ScrollViewer Grid.Row="3" VerticalScrollBarVisibility="Auto">
+                    <StackPanel>
+                        <StackPanel x:Name="D38999PartNumberPanel">
+                            <TextBlock Text="품번 구성" FontWeight="SemiBold" Margin="0,0,0,5"/>
+                            <Grid Margin="0,0,0,10">
+                                <Grid.ColumnDefinitions><ColumnDefinition Width="116"/><ColumnDefinition Width="*"/></Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/><RowDefinition Height="Auto"/></Grid.RowDefinitions>
+                                <TextBlock Text="커넥터 형태" VerticalAlignment="Center"/><ComboBox x:Name="FinalConnectorTypeCombo" Grid.Column="1" Margin="4,2" SelectionChanged="FinalConnectorTypeCombo_SelectionChanged"/>
+                                <TextBlock Grid.Row="1" Text="Class (재질/도금)" VerticalAlignment="Center"/><ComboBox x:Name="ClassCombo" Grid.Row="1" Grid.Column="1" Margin="4,2" SelectionChanged="PartCodeCombo_SelectionChanged"/>
+                                <TextBlock Grid.Row="2" Text="접점 (P:핀/S:소켓)" VerticalAlignment="Center" FontSize="11"/><ComboBox x:Name="ContactStyleCombo" Grid.Row="2" Grid.Column="1" Margin="4,2" SelectionChanged="PartCodeCombo_SelectionChanged"/>
+                                <TextBlock Grid.Row="3" Text="Keying (방향)" VerticalAlignment="Center"/><ComboBox x:Name="KeyingCombo" Grid.Row="3" Grid.Column="1" Margin="4,2" SelectionChanged="PartCodeCombo_SelectionChanged"/>
+                            </Grid>
+                            <TextBlock Text="품번 패턴" FontWeight="SemiBold"/><TextBox x:Name="PatternBox" Margin="0,4,0,10" IsReadOnly="True" TextWrapping="Wrap" Background="{DynamicResource AppSubtlePanelBrush}"/>
+                            <TextBlock Text="적용할 커넥터명" FontWeight="SemiBold"/><TextBox x:Name="ConnectorNameBox" Margin="0,4,0,8" ToolTip="검색 결과를 바탕으로 자동 입력됩니다. 필요한 경우 직접 수정할 수 있습니다."/>
+                            <TextBlock Text="선택 후에도 커넥터명은 기존 입력칸에서 자유롭게 수정할 수 있습니다." Foreground="{DynamicResource AppMutedTextBrush}" FontSize="10.5" TextWrapping="Wrap"/>
+                        </StackPanel>
+                        <Border x:Name="CustomConnectorInfoPanel" Visibility="Collapsed" Background="{DynamicResource AppAlternateRowBrush}" BorderBrush="{DynamicResource AppBorderBrush}" BorderThickness="1" Padding="12">
+                            <StackPanel><TextBlock Text="사용자 등록 커넥터" FontWeight="SemiBold"/><TextBlock x:Name="CustomConnectorSeriesText" Margin="0,7,0,0"/><TextBlock x:Name="CustomConnectorPinCountText" Margin="0,4,0,0"/></StackPanel>
+                        </Border>
+                    </StackPanel>
+                </ScrollViewer>
+                <StackPanel Grid.Row="4" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,14,0,0">
+                    <Button x:Name="PinPositionButton" Content="핀 위치 설정…" Width="112" Height="30"
+                            Margin="0,0,8,0" IsEnabled="False" Click="PinPositionButton_Click"/>
+                    <Button x:Name="ApplyButton" Content="적용" Style="{StaticResource PrimaryButtonStyle}" Width="88" Height="30" Margin="0,0,8,0" IsDefault="True" IsEnabled="False" Click="ApplyButton_Click"/>
+                    <Button Content="취소" Width="88" Height="30" IsCancel="True"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
